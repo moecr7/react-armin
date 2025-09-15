@@ -1,98 +1,155 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Search, Map, Building2, Users } from "lucide-react";
+import { Search, Map, Building2, Users, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import heroImage from "@/assets/hero-homepage-frame50.jpg";
+import secondaryImage from "@/assets/secondary-homepage-frame72.jpg";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen bg-gradient-to-br from-primary via-primary-dark to-slate-900 text-primary-foreground relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
-      </div>
-      
-      <div className="container mx-auto px-4 pt-24 pb-12 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
-          <div className="space-y-8 text-center lg:text-right">
-            <div className="space-y-6">
-              <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
-                جستجو و مسیریابی در پارک علم
-                <span className="block text-primary-light">و فناوری</span>
-              </h1>
-              
-              <p className="text-xl lg:text-2xl text-primary-foreground/80 max-w-2xl mx-auto lg:mx-0">
-                معرفی شرکت ها، دستاوردها و رویدادهای
-                پارک علم و فناوری برای جستجو و مسیریابی
-                از دکمه زیر استفاده نمایید.
-              </p>
-            </div>
+    <>
+      {/* Main Hero Section - Frame 50 */}
+      <section className="min-h-screen relative overflow-hidden bg-background">
+        <div className="absolute inset-0">
+          <img 
+            src={heroImage} 
+            alt="پارک علم و فناوری"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-primary/80"></div>
+        </div>
+        
+        <div className="relative z-10 min-h-screen flex items-center">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center space-y-8">
+              <div className="space-y-6">
+                <h1 className="text-5xl lg:text-7xl font-bold text-primary-foreground leading-tight">
+                  پارک علم و فناوری
+                </h1>
+                <div className="w-24 h-1 bg-accent mx-auto rounded-full"></div>
+                <p className="text-xl lg:text-2xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
+                  مرکز نوآوری و توسعه فناوری که محیطی مناسب برای رشد کسب‌وکارهای دانش‌بنیان فراهم می‌کند
+                </p>
+              </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button asChild size="lg" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 shadow-large">
-                <Link to="/search">
-                  <Search className="ml-2 h-5 w-5" />
-                  شروع جستجو
-                </Link>
-              </Button>
-              
-              <Button asChild variant="outline" size="lg" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                <Link to="/map">
-                  <Map className="ml-2 h-5 w-5" />
-                  مشاهده نقشه
-                </Link>
-              </Button>
-            </div>
-          </div>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">
+                <Button 
+                  asChild 
+                  size="lg" 
+                  className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg rounded-xl shadow-large hover:shadow-xl transition-all duration-300 hover:scale-105"
+                >
+                  <Link to="/search">
+                    شروع جستجو
+                    <ArrowLeft className="mr-2 h-5 w-5" />
+                  </Link>
+                </Button>
+                
+                <Button 
+                  asChild 
+                  variant="outline" 
+                  size="lg" 
+                  className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary px-8 py-6 text-lg rounded-xl transition-all duration-300 hover:scale-105"
+                >
+                  <Link to="/map">
+                    مشاهده نقشه
+                    <Map className="mr-2 h-5 w-5" />
+                  </Link>
+                </Button>
+              </div>
 
-          {/* Visual Elements */}
-          <div className="space-y-6">
-            {/* Main Visual Card */}
-            <Card className="overflow-hidden shadow-elegant">
-              <CardContent className="p-0">
-                <div className="relative h-80 overflow-hidden">
-                  <img 
-                    src="/src/assets/business-meeting.jpg" 
-                    alt="جلسه کاری در پارک علم و فناوری"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <div className="space-y-2">
-                      <h3 className="text-2xl font-bold">پارک علم و فناوری</h3>
-                      <p className="text-primary-foreground/90">مرکز نوآوری و فناوری</p>
-                    </div>
-                  </div>
+              {/* Quick Stats */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-16">
+                <div className="text-center space-y-2">
+                  <div className="text-4xl font-bold text-accent">۱۲۰+</div>
+                  <div className="text-primary-foreground/80">شرکت فعال</div>
                 </div>
-              </CardContent>
-            </Card>
-
-            {/* Stats Cards */}
-            <div className="grid grid-cols-2 gap-4">
-              <Card className="shadow-medium">
-                <CardContent className="p-4 text-center">
-                  <Users className="h-8 w-8 text-primary mx-auto mb-2" />
-                  <div className="space-y-1">
-                    <p className="text-2xl font-bold text-card-foreground">۱۲۰+</p>
-                    <p className="text-sm text-muted-foreground">شرکت فعال</p>
-                  </div>
-                </CardContent>
-              </Card>
-              
-              <Card className="shadow-medium">
-                <CardContent className="p-4 text-center">
-                  <Building2 className="h-8 w-8 text-accent mx-auto mb-2" />
-                  <div className="space-y-1">
-                    <p className="text-2xl font-bold text-card-foreground">۲۵+</p>
-                    <p className="text-sm text-muted-foreground">واحد فناوری</p>
-                  </div>
-                </CardContent>
-              </Card>
+                <div className="text-center space-y-2">
+                  <div className="text-4xl font-bold text-accent">۲۵+</div>
+                  <div className="text-primary-foreground/80">واحد فناوری</div>
+                </div>
+                <div className="text-center space-y-2">
+                  <div className="text-4xl font-bold text-accent">۵۰۰+</div>
+                  <div className="text-primary-foreground/80">فارغ‌التحصیل</div>
+                </div>
+                <div className="text-center space-y-2">
+                  <div className="text-4xl font-bold text-accent">۱۰+</div>
+                  <div className="text-primary-foreground/80">سال فعالیت</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Secondary Section - Frame 72 */}
+      <section className="py-20 bg-background relative">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="order-2 lg:order-1">
+              <div className="relative overflow-hidden rounded-2xl shadow-large">
+                <img 
+                  src={secondaryImage} 
+                  alt="محیط کاری پارک علم و فناوری"
+                  className="w-full h-96 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
+              </div>
+            </div>
+            
+            <div className="order-1 lg:order-2 space-y-8">
+              <div className="space-y-4">
+                <h2 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+                  محیطی برای
+                  <span className="block text-accent">نوآوری و خلاقیت</span>
+                </h2>
+                <div className="w-16 h-1 bg-accent rounded-full"></div>
+              </div>
+              
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                پارک علم و فناوری با ارائه امکانات مدرن و خدمات تخصصی، بستری مناسب برای توسعه ایده‌های نوآورانه و تبدیل آن‌ها به محصولات و خدمات کاربردی فراهم می‌آورد.
+              </p>
+              
+              <div className="grid grid-cols-2 gap-4 pt-6">
+                <div className="space-y-2">
+                  <div className="flex items-center space-x-2 rtl:space-x-reverse">
+                    <div className="w-3 h-3 bg-accent rounded-full"></div>
+                    <span className="text-foreground font-medium">مشاوره تخصصی</span>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-center space-x-2 rtl:space-x-reverse">
+                    <div className="w-3 h-3 bg-accent rounded-full"></div>
+                    <span className="text-foreground font-medium">دسترسی به بازار</span>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-center space-x-2 rtl:space-x-reverse">
+                    <div className="w-3 h-3 bg-accent rounded-full"></div>
+                    <span className="text-foreground font-medium">حمایت مالی</span>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-center space-x-2 rtl:space-x-reverse">
+                    <div className="w-3 h-3 bg-accent rounded-full"></div>
+                    <span className="text-foreground font-medium">شبکه‌سازی</span>
+                  </div>
+                </div>
+              </div>
+              
+              <Button 
+                asChild 
+                className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-xl shadow-medium hover:shadow-large transition-all duration-300"
+              >
+                <Link to="/company/1">
+                  بیشتر بدانید
+                  <ArrowLeft className="mr-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 
