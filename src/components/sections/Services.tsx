@@ -1,193 +1,115 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Briefcase, 
-  PieChart, 
-  CreditCard, 
-  FileText,
-  ArrowLeft,
-  Check,
-  Star
-} from "lucide-react";
+import { Building2, Users, Target, CheckCircle } from "lucide-react";
 
 const Services = () => {
   const services = [
     {
-      icon: Briefcase,
-      title: "مدیریت پروژه",
-      description: "ابزارهای کامل برای مدیریت پروژه‌ها، تعیین وظایف و پیگیری پیشرفت تیم",
-      features: ["تقسیم‌بندی وظایف", "تقویم پروژه", "گزارش پیشرفت", "همکاری تیمی"],
-      price: "۲۹۹,۰۰۰ تومان",
-      period: "ماهانه",
-      popular: false,
-      color: "from-blue-500/10 to-blue-600/10",
-      iconColor: "text-blue-500"
+      icon: Building2,
+      title: "خدمات اداری",
+      description: "ارائه خدمات اداری و پشتیبانی کسب‌وکار",
+      features: ["مدیریت اسناد", "خدمات حقوقی", "مشاوره کسب‌وکار"],
+      popular: false
     },
     {
-      icon: PieChart,
-      title: "تحلیل و گزارشات",
-      description: "داشبورد تحلیلی پیشرفته با نمودارهای تعاملی و گزارش‌های دقیق",
-      features: ["داشبورد تعاملی", "گزارش خودکار", "تحلیل روند", "پیش‌بینی هوش مصنوعی"],
-      price: "۴۹۹,۰۰۰ تومان",
-      period: "ماهانه",
-      popular: true,
-      color: "from-purple-500/10 to-purple-600/10",
-      iconColor: "text-purple-500"
+      icon: Users,
+      title: "فضای کاری مشترک",
+      description: "محیط کاری مدرن برای تیم‌ها و استارت‌اپ‌ها",
+      features: ["فضای انعطاف‌پذیر", "اتاق جلسات", "امکانات فناوری"],
+      popular: true
     },
     {
-      icon: CreditCard,
-      title: "مدیریت مالی",
-      description: "سیستم حسابداری کامل با امکان صدور فاکتور و پیگیری تراکنش‌ها",
-      features: ["حسابداری دوطرفه", "صدور فاکتور", "پیگیری پرداخت", "گزارش مالی"],
-      price: "۷۹۹,۰۰۰ تومان",
-      period: "ماهانه",
-      popular: false,
-      color: "from-green-500/10 to-green-600/10",
-      iconColor: "text-green-500"
-    }
-  ];
-
-  const additionalServices = [
-    {
-      icon: FileText,
-      title: "مدیریت اسناد",
-      description: "نگهداری و مدیریت دیجیتال تمام اسناد و فایل‌های کسب‌وکار"
+      icon: Target,
+      title: "شتاب‌دهنده کسب‌وکار",
+      description: "برنامه‌های شتاب‌دهی برای شرکت‌های نوپا",
+      features: ["منتورینگ", "سرمایه‌گذاری", "شبکه‌سازی"],
+      popular: false
     }
   ];
 
   return (
-    <section id="services" className="py-20 bg-background">
+    <section id="services" className="py-16 bg-muted/50">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-foreground">
-            خدمات <span className="text-primary">ما</span>
+        <div className="text-center space-y-4 mb-12">
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground">
+            خدمات <span className="text-primary">پارک</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            بسته‌های جامع و انعطاف‌پذیر برای هر سایز کسب‌وکار از استارتاپ تا شرکت‌های بزرگ
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            مجموعه‌ای از خدمات تخصصی برای رشد و توسعه کسب‌وکارهای فناورانه
           </p>
         </div>
 
-        {/* Main Services */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-12">
-          {services.map((service, index) => (
-            <Card 
-              key={index}
-              className={`group relative overflow-hidden hover:shadow-large transition-all duration-500 hover:-translate-y-2 ${
-                service.popular ? 'border-primary scale-105' : 'border-border/50'
-              }`}
-            >
-              {service.popular && (
-                <div className="absolute top-0 right-0 left-0 h-1 gradient-primary"></div>
-              )}
-              
-              <CardContent className="p-6 space-y-6 relative">
-                {service.popular && (
-                  <Badge className="absolute -top-2 right-4 bg-primary text-primary-foreground">
-                    <Star className="w-3 h-3 ml-1" />
-                    محبوب‌ترین
-                  </Badge>
-                )}
-
-                {/* Icon and Title */}
-                <div className="text-center space-y-4">
-                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} ${service.iconColor} group-hover:scale-110 transition-transform duration-300`}>
-                    <service.icon size={32} />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-card-foreground">
-                      {service.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mt-2">
-                      {service.description}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Pricing */}
-                <div className="text-center space-y-1">
-                  <div className="text-3xl font-bold text-primary">
-                    {service.price}
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    {service.period}
-                  </div>
-                </div>
-
-                {/* Features */}
-                <div className="space-y-3">
-                  {service.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2 rtl:space-x-reverse">
-                      <Check size={16} className="text-primary flex-shrink-0" />
-                      <span className="text-sm text-muted-foreground">{feature}</span>
+        {/* Services Grid */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
+          <div className="order-2 lg:order-1">
+            <div className="grid gap-6">
+              {services.map((service, index) => (
+                <Card key={index} className="group hover:shadow-medium transition-all duration-300 hover:-translate-y-1 relative">
+                  {service.popular && (
+                    <Badge className="absolute -top-2 right-4 bg-primary text-primary-foreground">
+                      محبوب
+                    </Badge>
+                  )}
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-4 rtl:space-x-reverse">
+                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                        <service.icon className="h-6 w-6 text-primary" />
+                      </div>
+                      <div className="space-y-3 flex-1">
+                        <div className="space-y-2">
+                          <h3 className="text-lg font-semibold text-card-foreground">
+                            {service.title}
+                          </h3>
+                          <p className="text-sm text-muted-foreground leading-relaxed">
+                            {service.description}
+                          </p>
+                        </div>
+                        <ul className="space-y-1">
+                          {service.features.map((feature, idx) => (
+                            <li key={idx} className="flex items-center space-x-2 rtl:space-x-reverse text-sm text-muted-foreground">
+                              <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
+                              <span>{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
-                  ))}
-                </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
 
-                {/* CTA Button */}
-                <Button 
-                  className={`w-full ${
-                    service.popular 
-                      ? 'gradient-primary text-primary-foreground shadow-medium' 
-                      : 'border border-primary text-primary hover:bg-primary hover:text-primary-foreground'
-                  } transition-all duration-300`}
-                >
-                  <ArrowLeft className="ml-2 h-4 w-4 rtl:rotate-180" />
-                  انتخاب پکیج
-                </Button>
+          {/* Office Image */}
+          <div className="order-1 lg:order-2">
+            <Card className="overflow-hidden shadow-elegant">
+              <CardContent className="p-0">
+                <div className="relative h-96 overflow-hidden">
+                  <img 
+                    src="/src/assets/office-collaboration.jpg" 
+                    alt="همکاری تیمی در محیط کاری"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                    <div className="space-y-2">
+                      <h4 className="text-xl font-bold">محیط کاری مدرن</h4>
+                      <p className="text-primary-foreground/90">فضایی برای همکاری و نوآوری</p>
+                    </div>
+                  </div>
+                </div>
               </CardContent>
             </Card>
-          ))}
+          </div>
         </div>
 
-        {/* Additional Services */}
-        <div className="bg-gradient-to-br from-muted/30 to-accent/30 rounded-2xl p-8">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-foreground mb-2">
-              خدمات تکمیلی
-            </h3>
-            <p className="text-muted-foreground">
-              خدمات اضافی برای تکمیل نیازهای کسب‌وکار شما
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {additionalServices.map((service, index) => (
-              <div 
-                key={index}
-                className="text-center space-y-3 p-4 rounded-lg bg-card/50 hover:bg-card transition-colors"
-              >
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg gradient-primary text-primary-foreground">
-                  <service.icon size={24} />
-                </div>
-                <h4 className="font-semibold text-card-foreground">
-                  {service.title}
-                </h4>
-                <p className="text-sm text-muted-foreground">
-                  {service.description}
-                </p>
-              </div>
-            ))}
-            
-            {/* Coming Soon Cards */}
-            {[1, 2, 3].map((item) => (
-              <div 
-                key={item}
-                className="text-center space-y-3 p-4 rounded-lg bg-card/30 border border-dashed border-primary/30"
-              >
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-muted/50 text-muted-foreground">
-                  <span className="text-2xl">+</span>
-                </div>
-                <h4 className="font-semibold text-muted-foreground">
-                  به‌زودی...
-                </h4>
-                <p className="text-sm text-muted-foreground/70">
-                  خدمات جدید در راه است
-                </p>
-              </div>
-            ))}
-          </div>
+        {/* CTA Section */}
+        <div className="text-center">
+          <Button size="lg" className="shadow-medium">
+            اطلاعات بیشتر
+          </Button>
         </div>
       </div>
     </section>

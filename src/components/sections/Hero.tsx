@@ -50,13 +50,17 @@ const Hero = () => {
             {/* Main Visual Card */}
             <Card className="overflow-hidden shadow-elegant">
               <CardContent className="p-0">
-                <div className="relative h-80 bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
-                  <div className="absolute inset-0 bg-gradient-to-br from-slate-200/30 to-slate-300/20"></div>
-                  <div className="relative z-10 text-center space-y-4">
-                    <Building2 className="h-16 w-16 text-primary mx-auto" />
+                <div className="relative h-80 overflow-hidden">
+                  <img 
+                    src="/src/assets/business-meeting.jpg" 
+                    alt="جلسه کاری در پارک علم و فناوری"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                     <div className="space-y-2">
-                      <h3 className="text-2xl font-bold text-slate-700">پارک علم و فناوری</h3>
-                      <p className="text-slate-600">مرکز نوآوری و فناوری</p>
+                      <h3 className="text-2xl font-bold">پارک علم و فناوری</h3>
+                      <p className="text-primary-foreground/90">مرکز نوآوری و فناوری</p>
                     </div>
                   </div>
                 </div>

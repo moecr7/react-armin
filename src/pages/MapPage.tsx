@@ -108,19 +108,35 @@ const MapPage = () => {
             {/* Map Display */}
             <Card className="shadow-medium">
               <CardContent className="p-0">
-                <div className="relative h-96 bg-gradient-to-br from-green-100 to-blue-100 rounded-lg overflow-hidden">
-                  {/* Map Placeholder */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-green-200/30 to-blue-200/20"></div>
+                <div className="relative h-96 overflow-hidden rounded-lg">
+                  <img 
+                    src="/src/assets/park-map.jpg" 
+                    alt="نقشه پارک علم و فناوری"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/20"></div>
                   
-                  {/* Mock Map Elements */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center space-y-4">
-                      <MapPin className="h-12 w-12 text-primary mx-auto" />
-                      <div className="space-y-2">
-                        <h3 className="text-lg font-semibold text-slate-700">نقشه پارک علم و فناوری</h3>
-                        <p className="text-sm text-slate-600">برای مشاهده مسیر، شرکت مورد نظر را انتخاب کنید</p>
-                      </div>
+                  {/* Map overlay info */}
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg p-4 shadow-lg max-w-xs">
+                    <div className="space-y-2">
+                      <h3 className="text-lg font-bold text-slate-800">پارک علم و فناوری</h3>
+                      <p className="text-sm text-slate-600">دانشگاه صنعتی</p>
+                      {selectedCompany && (
+                        <div className="mt-3 p-3 bg-primary/10 rounded-lg">
+                          <p className="text-sm text-primary font-semibold">
+                            مسیر به {selectedCompany}
+                          </p>
+                        </div>
+                      )}
                     </div>
+                  </div>
+                  
+                  {/* Location markers */}
+                  <div className="absolute top-1/3 right-1/2 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold shadow-lg animate-pulse">
+                    <div className="w-3 h-3 bg-white rounded-full"></div>
+                  </div>
+                  <div className="absolute bottom-1/3 left-1/3 w-8 h-8 bg-accent rounded-full flex items-center justify-center text-white font-bold shadow-lg">
+                    <div className="w-3 h-3 bg-white rounded-full"></div>
                   </div>
 
                   {/* Route Lines */}

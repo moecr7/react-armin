@@ -48,24 +48,50 @@ const About = () => {
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {features.map((feature, index) => (
-            <Card key={index} className="group hover:shadow-medium transition-all duration-300 hover:-translate-y-1">
-              <CardContent className="p-6 text-center space-y-4">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto group-hover:bg-primary/20 transition-colors">
-                  <feature.icon className="h-8 w-8 text-primary" />
-                </div>
-                <div className="space-y-2">
-                  <h3 className="text-lg font-semibold text-card-foreground">
-                    {feature.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {feature.description}
-                  </p>
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
+          <div className="order-2 lg:order-1">
+            <div className="grid md:grid-cols-2 gap-6">
+              {features.map((feature, index) => (
+                <Card key={index} className="group hover:shadow-medium transition-all duration-300 hover:-translate-y-1">
+                  <CardContent className="p-6 text-center space-y-4">
+                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto group-hover:bg-primary/20 transition-colors">
+                      <feature.icon className="h-8 w-8 text-primary" />
+                    </div>
+                    <div className="space-y-2">
+                      <h3 className="text-lg font-semibold text-card-foreground">
+                        {feature.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Tech Image */}
+          <div className="order-1 lg:order-2">
+            <Card className="overflow-hidden shadow-elegant">
+              <CardContent className="p-0">
+                <div className="relative h-96 overflow-hidden">
+                  <img 
+                    src="/src/assets/tech-developer.jpg" 
+                    alt="توسعه‌دهنده فناوری در حال کار"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                    <div className="space-y-2">
+                      <h4 className="text-xl font-bold">مرکز نوآوری</h4>
+                      <p className="text-primary-foreground/90">محیطی برای رشد ایده‌ها</p>
+                    </div>
+                  </div>
                 </div>
               </CardContent>
             </Card>
-          ))}
+          </div>
         </div>
 
         {/* CTA Buttons */}
