@@ -11,6 +11,7 @@ import Footer from "@/components/layout/Footer";
 const SearchPage = () => {
   const [selectedCompany, setSelectedCompany] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
+  const [activeFilter, setActiveFilter] = useState("all");
 
   const mockCompanies = [
     {
@@ -21,82 +22,105 @@ const SearchPage = () => {
     },
     {
       id: 2,
-      name: "هوش نگار",
-      field: "مدیر:مهدی رضایی • حوزه:هوش مصنوعی",
-      code: "پلاک:A_120"
+      name: "فن‌آوا",
+      field: "مدیر:علی محمدی • حوزه:نرم‌افزار",
+      code: "پلاک:B_85"
     },
     {
       id: 3,
-      name: "هوش نگار",
-      field: "مدیر:مهدی رضایی • حوزه:هوش مصنوعی",
-      code: "پلاک:A_120"
+      name: "راهکار",
+      field: "مدیر:سارا احمدی • حوزه:مشاوره",
+      code: "پلاک:C_42"
     }
   ];
 
+  const filterOptions = [
+    { id: "all", label: "همه" },
+    { id: "tech", label: "فناوری" },
+    { id: "ai", label: "هوش مصنوعی" },
+    { id: "software", label: "نرم‌افزار" },
+    { id: "consulting", label: "مشاوره" }
+  ];
+
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-background">
       <Header />
       
       <main className="pt-14">
         {/* Header Section */}
-        <div className="bg-primary px-4 py-3">
+        <div className="bg-primary px-4 py-4">
           <div className="flex items-center justify-between">
-            <Link to="/" className="flex items-center text-primary-foreground hover:text-primary-light">
+            <Link to="/" className="flex items-center text-primary-foreground hover:text-accent">
               <ArrowLeft className="h-5 w-5 ml-2" />
-              بازگشت
+              <span className="text-sm">بازگشت</span>
             </Link>
-            <h1 className="text-lg font-semibold text-primary-foreground">جستجو</h1>
+            <h1 className="text-xl font-bold text-primary-foreground">جستجو و فیلتر شرکت‌ها</h1>
           </div>
         </div>
 
-        <div className="px-4 py-6 space-y-4 max-w-md mx-auto">
-          {/* Search Form */}
-          <Card className="bg-white border border-slate-200 rounded-xl shadow-sm">
-            <CardContent className="p-4 space-y-4">
-              {/* Company Name Dropdown */}
-              <div className="space-y-2">
-                <Select value={selectedCompany} onValueChange={setSelectedCompany}>
-                  <SelectTrigger className="w-full border-slate-200 rounded-lg bg-slate-50">
-                    <SelectValue placeholder="نام شرکت" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">همه شرکت‌ها</SelectItem>
-                    <SelectItem value="hoshnegar">هوش نگار</SelectItem>
-                    <SelectItem value="fanava">فن‌آوا</SelectItem>
-                    <SelectItem value="rahkar">راهکار</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
+        <div className="px-4 py-6 space-y-6">
+          {/* Search Input */}
+          <div className="max-w-md mx-auto">
+            <Input
+              type="text"
+              placeholder="جستجو بر اساس نام شرکت، مدیر یا حوزه فعالیت"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full h-12 text-base border-border rounded-xl bg-input px-4"
+            />
+          </div>
 
-              {/* Search Input */}
-              <div className="space-y-2">
-                <Input
-                  type="text"
-                  placeholder="نام شرکت،مدیر یا حوزه"
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full border-slate-200 rounded-lg bg-slate-50"
-                />
-              </div>
-            </CardContent>
-          </Card>
+          {/* Filter Buttons */}
+          <div className="flex flex-wrap gap-2 justify-center max-w-lg mx-auto">
+            {filterOptions.map((filter) => (
+              <Button
+                key={filter.id}
+                variant={activeFilter === filter.id ? "default" : "secondary"}
+                size="sm"
+                onClick={() => setActiveFilter(filter.id)}
+                className={`rounded-full px-4 py-2 text-sm font-medium ${
+                  activeFilter === filter.id
+                    ? "bg-accent text-accent-foreground shadow-sm"
+                    : "bg-secondary text-secondary-foreground hover:bg-accent hover:text-accent-foreground"
+                }`}
+              >
+                {filter.label}
+              </Button>
+            ))}
+          </div>
+
+          {/* Results Count */}
+          <div className="text-center">
+            <p className="text-sm text-muted-foreground">
+              {mockCompanies.length} شرکت یافت شد
+            </p>
+          </div>
 
           {/* Search Results */}
-          <div className="space-y-3">
+          <div className="space-y-4 max-w-md mx-auto">
             {mockCompanies.map((company) => (
-              <Card key={company.id} className="bg-white border border-slate-200 rounded-xl shadow-sm">
+              <Card key={company.id} className="bg-card border border-border rounded-xl shadow-sm overflow-hidden">
                 <CardContent className="p-4">
                   <div className="space-y-3">
                     <div>
-                      <h3 className="text-lg font-bold text-primary">{company.name}</h3>
-                      <p className="text-sm text-slate-600">{company.field} • {company.code}</p>
+                      <h3 className="text-lg font-bold text-card-foreground">{company.name}</h3>
+                      <p className="text-sm text-muted-foreground mt-1">{company.field}</p>
+                      <p className="text-sm text-muted-foreground">{company.code}</p>
                     </div>
                     
-                    <div className="flex gap-2">
-                      <Button variant="outline" size="sm" className="flex-1 text-sm py-2 rounded-lg border-slate-300 text-slate-600">
+                    <div className="flex gap-2 pt-2">
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="flex-1 text-sm py-2 rounded-lg border-border hover:bg-secondary"
+                      >
                         جزئیات
                       </Button>
-                      <Button asChild size="sm" className="flex-1 text-sm py-2 rounded-lg bg-primary hover:bg-primary/90 text-white">
+                      <Button 
+                        asChild 
+                        size="sm" 
+                        className="flex-1 text-sm py-2 rounded-lg bg-accent hover:bg-accent/90 text-accent-foreground"
+                      >
                         <Link to={`/company/${company.id}`}>
                           نمایش مسیر
                         </Link>
@@ -109,7 +133,7 @@ const SearchPage = () => {
           </div>
 
           {/* Footer Note */}
-          <div className="text-center text-xs text-slate-500 mt-6 px-4">
+          <div className="text-center text-xs text-muted-foreground mt-8 px-4">
             برای مشاهده مستقیم مسیر می‌توانید از صفحه نقشه استفاده کنید
           </div>
         </div>
