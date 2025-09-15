@@ -1,22 +1,23 @@
 import { Button } from "@/components/ui/button";
 import { Map, ArrowLeft, Menu } from "lucide-react";
 import { Link } from "react-router-dom";
-import businessMeeting from "@/assets/business-meeting.jpg";
-import techWork from "@/assets/tech-work-image.jpg";
-import logoImage from "@/assets/logo-golden.jpg";
+import heroFrame50 from "@/assets/hero-frame-50.jpg";
+import heroFrame72 from "@/assets/hero-frame-72.png";
 
 const Hero = () => {
   return (
     <>
-      {/* Frame 50 Recreation - Mobile Hero */}
-      <section className="min-h-screen relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-        {/* Background Pattern/Blur Effect */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-purple-900/20"></div>
-          <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.1) 0%, transparent 50%), 
-                             radial-gradient(circle at 75% 75%, rgba(147, 51, 234, 0.1) 0%, transparent 50%)`
-          }}></div>
+      {/* Frame 50 - Mobile Hero with Background Image */}
+      <section className="min-h-screen relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img 
+            src={heroFrame50} 
+            alt="پارک علم و فناوری - جلسه کاری"
+            className="w-full h-full object-cover"
+          />
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-black/50"></div>
         </div>
         
         {/* Content Container */}
@@ -84,45 +85,36 @@ const Hero = () => {
         </div>
       </section>
 
-      {/* Frame 72 Recreation - Business Section */}
+      {/* Frame 72 - Business Section with Exact Image */}
       <section className="py-20 bg-white relative overflow-hidden">
-        {/* Decorative Elements */}
-        <div className="absolute top-10 right-10 w-32 h-32 bg-blue-50 rounded-full opacity-50"></div>
-        <div className="absolute bottom-10 left-10 w-24 h-24">
-          <div className="grid grid-cols-4 gap-1">
+        {/* Decorative dots - top right */}
+        <div className="absolute top-10 right-10">
+          <div className="grid grid-cols-4 gap-2">
             {Array.from({ length: 16 }).map((_, i) => (
-              <div key={i} className="w-2 h-2 bg-blue-200 rounded-full"></div>
+              <div key={i} className="w-3 h-3 bg-blue-200 rounded-full"></div>
+            ))}
+          </div>
+        </div>
+        
+        {/* Decorative dots - bottom left */}
+        <div className="absolute bottom-10 left-10">
+          <div className="grid grid-cols-4 gap-2">
+            {Array.from({ length: 16 }).map((_, i) => (
+              <div key={i} className="w-3 h-3 bg-blue-200 rounded-full"></div>
             ))}
           </div>
         </div>
         
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Images Side */}
+            {/* Frame 72 Image Side */}
             <div className="order-2 lg:order-1 relative">
-              {/* Main Meeting Image */}
-              <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+              <div className="relative">
                 <img 
-                  src={businessMeeting} 
-                  alt="جلسه کاری در پارک علم و فناوری"
-                  className="w-full h-80 object-cover"
+                  src={heroFrame72} 
+                  alt="همکاری و کار تیمی در پارک علم و فناوری"
+                  className="w-full h-auto rounded-3xl shadow-2xl"
                 />
-              </div>
-              
-              {/* Secondary Tech Image - Positioned in corner */}
-              <div className="absolute -bottom-8 -right-8 w-48 h-36 overflow-hidden rounded-2xl shadow-xl border-4 border-white">
-                <img 
-                  src={techWork} 
-                  alt="کار با فناوری"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              
-              {/* Decorative dots */}
-              <div className="absolute -top-4 -left-4 grid grid-cols-3 gap-2">
-                {Array.from({ length: 9 }).map((_, i) => (
-                  <div key={i} className="w-3 h-3 bg-blue-400 rounded-full opacity-60"></div>
-                ))}
               </div>
             </div>
             
