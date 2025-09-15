@@ -12,72 +12,97 @@ const Header = () => {
     { href: "/", label: "خانه" },
     { href: "/search", label: "جستجو" },
     { href: "/map", label: "نقشه" },
+    { href: "/company/1", label: "جزئیات شرکت" },
   ];
 
   const isActive = (href: string) => location.pathname === href;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-primary shadow-medium">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src={logoGolden} alt="لوگو" className="h-8 w-8 rounded-full" />
-            <div className="flex items-center space-x-2 rtl:space-x-reverse">
-              <Crown className="h-5 w-5 text-accent" />
-              <span className="text-lg font-bold text-primary-foreground">
-                پارک علم و فناوری
-              </span>
-            </div>
-          </Link>
+    <>
+      <header className="fixed top-0 left-0 right-0 z-50 bg-primary shadow-medium">
+        <div className="px-4">
+          <div className="flex items-center justify-between h-14">
+            {/* Mobile Menu Button */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="text-primary-foreground hover:bg-primary/90 p-2"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              <Menu className="h-6 w-6" />
+            </Button>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6 rtl:space-x-reverse">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                to={item.href}
-                className={`text-sm font-medium transition-colors hover:text-accent ${
-                  isActive(item.href) ? "text-accent" : "text-primary-foreground"
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
+            {/* Logo and Title */}
+            <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+              <div className="flex items-center space-x-2 rtl:space-x-reverse">
+                <span className="text-lg font-bold text-primary-foreground">
+                  پارک علم و فناوری
+                </span>
+              </div>
+            </Link>
 
-          {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden text-primary-foreground hover:bg-primary-light"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </Button>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-primary-light">
-            <nav className="flex flex-col space-y-2">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  to={item.href}
-                  className={`px-4 py-2 text-sm font-medium transition-colors hover:text-accent ${
-                    isActive(item.href) ? "text-accent" : "text-primary-foreground"
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
+            {/* Logo */}
+            <Link to="/">
+              <img src={logoGolden} alt="لوگو" className="h-10 w-10 rounded-full" />
+            </Link>
           </div>
-        )}
-      </div>
-    </header>
+        </div>
+      </header>
+
+      {/* Mobile Menu Overlay */}
+      {isMenuOpen && (
+        <>
+          {/* Backdrop with blur */}
+          <div 
+            className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
+            onClick={() => setIsMenuOpen(false)}
+          />
+          
+          {/* Menu Panel */}
+          <div className="fixed top-0 right-0 z-50 h-full w-80 bg-background shadow-2xl transform transition-transform duration-300 ease-in-out">
+            <div className="p-6">
+              {/* Close Button */}
+              <div className="flex justify-end mb-6">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="text-muted-foreground hover:text-foreground"
+                >
+                  <X className="h-6 w-6" />
+                </Button>
+              </div>
+
+              {/* Menu Items */}
+              <nav className="space-y-4">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    to={item.href}
+                    className="block text-lg font-medium text-foreground hover:text-primary py-3 border-b border-border"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+
+              {/* Start Search Button */}
+              <div className="mt-8">
+                <Button 
+                  asChild 
+                  className="w-full gradient-primary text-lg py-6 rounded-xl"
+                >
+                  <Link to="/search" onClick={() => setIsMenuOpen(false)}>
+                    شروع جستجو
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+    </>
   );
 };
 

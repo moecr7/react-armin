@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Crown, Mail, ExternalLink, Phone, Copy } from "lucide-react";
+import { ArrowLeft, Crown, Mail, ExternalLink, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -9,8 +8,8 @@ import Footer from "@/components/layout/Footer";
 const CompanyDetailsPage = () => {
   const companyDetails = {
     name: "هوش نگار",
-    field: "حوزه: هوش مصنوعی",
-    code: "پلاک: A_120-3w",
+    field: "حوزه:هوش مصنوعی",
+    code: "پلاک:A_120",
     introduction: "توسعه سامانه‌های بینایی ماشین و تحلیل داده برای صنایع تولیدی و پزشکی.",
     manager: "مهدی رضایی",
     address: "پلاک A، طبقه ۱، اتاق ۱۰۲",
@@ -21,144 +20,122 @@ const CompanyDetailsPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-slate-50">
       <Header />
       
-      <main className="pt-16">
+      <main className="pt-14">
         {/* Header Section */}
-        <div className="bg-primary text-primary-foreground py-8">
-          <div className="container mx-auto px-4">
-            <div className="flex items-center justify-between">
-              <Link to="/search" className="flex items-center text-primary-foreground hover:text-primary-light">
-                <ArrowRight className="h-5 w-5 ml-2" />
-                بازگشت
-              </Link>
-              <div className="flex items-center space-x-3 rtl:space-x-reverse">
-                <Crown className="h-6 w-6 text-yellow-400" />
-                <span className="text-lg font-semibold">پارک علم و فناوری</span>
-              </div>
-            </div>
+        <div className="bg-primary px-4 py-3">
+          <div className="flex items-center justify-between">
+            <Link to="/search" className="flex items-center text-primary-foreground hover:text-primary-light">
+              <ArrowLeft className="h-5 w-5 ml-2" />
+              بازگشت
+            </Link>
+            <h1 className="text-lg font-semibold text-primary-foreground">جزئیات شرکت</h1>
           </div>
         </div>
 
-        {/* Company Details */}
-        <div className="container mx-auto px-4 py-8">
-          <div className="max-w-2xl mx-auto space-y-6">
-            {/* Page Title */}
-            <div className="text-center">
-              <h1 className="text-3xl font-bold text-foreground">جزئیات شرکت</h1>
-            </div>
+        {/* Content */}
+        <div className="px-4 py-6 space-y-4 max-w-md mx-auto">
+          {/* Company Name */}
+          <Card className="bg-white border border-slate-200 rounded-xl shadow-sm">
+            <CardContent className="p-4">
+              <div className="text-center space-y-3">
+                <h2 className="text-xl font-bold text-primary">{companyDetails.name}</h2>
+                <p className="text-sm text-slate-600">{companyDetails.field} • {companyDetails.code}</p>
+                
+                <div className="flex gap-2">
+                  <Button variant="outline" className="flex-1 text-sm py-2 rounded-lg border-slate-300 text-slate-600">
+                    کپی لینک
+                  </Button>
+                  <Button className="flex-1 text-sm py-2 rounded-lg bg-primary hover:bg-primary/90 text-white">
+                    نمایش مسیر روی نقشه
+                  </Button>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
 
-            {/* Main Company Info */}
-            <Card className="shadow-medium">
-              <CardContent className="p-6">
-                <div className="space-y-4">
-                  <div className="text-center space-y-2">
-                    <h2 className="text-2xl font-bold text-primary">{companyDetails.name}</h2>
-                    <p className="text-muted-foreground">{companyDetails.field} • {companyDetails.code}</p>
+          {/* Introduction */}
+          <Card className="bg-white border border-slate-200 rounded-xl shadow-sm">
+            <CardContent className="p-4">
+              <div className="space-y-3">
+                <h3 className="text-lg font-semibold text-slate-800">معرفی</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  {companyDetails.introduction}
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Manager */}
+          <Card className="bg-white border border-slate-200 rounded-xl shadow-sm">
+            <CardContent className="p-4">
+              <div className="space-y-3">
+                <h3 className="text-lg font-semibold text-slate-800">مدیرعامل</h3>
+                <p className="text-sm text-slate-600">{companyDetails.manager}</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Internal Address */}
+          <Card className="bg-white border border-slate-200 rounded-xl shadow-sm">
+            <CardContent className="p-4">
+              <div className="space-y-3">
+                <h3 className="text-lg font-semibold text-slate-800">آدرس داخلی</h3>
+                <p className="text-sm text-slate-600">{companyDetails.address}</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Contact Information */}
+          <Card className="bg-white border border-slate-200 rounded-xl shadow-sm">
+            <CardContent className="p-4">
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold text-slate-800">اطلاعات تماس</h3>
+                
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between py-2">
+                    <span className="text-sm text-slate-600">{companyDetails.email}</span>
+                    <Mail className="h-4 w-4 text-slate-400" />
                   </div>
                   
-                  <div className="flex gap-3">
-                    <Button className="flex-1 gradient-primary">
-                      <Copy className="h-4 w-4 ml-2" />
-                      کپی لینک
-                    </Button>
-                    <Button className="flex-1 gradient-primary">
-                      نمایش مسیر روی نقشه
-                    </Button>
+                  <div className="flex items-center justify-between py-2">
+                    <span className="text-sm text-slate-600">{companyDetails.website}</span>
+                    <ExternalLink className="h-4 w-4 text-slate-400" />
                   </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Introduction */}
-            <Card className="shadow-small">
-              <CardContent className="p-6">
-                <div className="space-y-3">
-                  <h3 className="text-lg font-semibold text-card-foreground">معرفی</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {companyDetails.introduction}
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Manager */}
-            <Card className="shadow-small">
-              <CardContent className="p-6">
-                <div className="space-y-3">
-                  <h3 className="text-lg font-semibold text-card-foreground">مدیر عامل</h3>
-                  <p className="text-muted-foreground">{companyDetails.manager}</p>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Internal Address */}
-            <Card className="shadow-small">
-              <CardContent className="p-6">
-                <div className="space-y-3">
-                  <h3 className="text-lg font-semibold text-card-foreground">آدرس داخلی</h3>
-                  <p className="text-muted-foreground">{companyDetails.address}</p>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Contact Information */}
-            <Card className="shadow-small">
-              <CardContent className="p-6">
-                <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-card-foreground">اطلاعات تماس</h3>
                   
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <span className="text-muted-foreground">{companyDetails.email}</span>
-                      <Mail className="h-4 w-4 text-muted-foreground" />
-                    </div>
-                    
-                    <div className="flex items-center justify-between">
-                      <span className="text-muted-foreground">{companyDetails.website}</span>
-                      <ExternalLink className="h-4 w-4 text-muted-foreground" />
-                    </div>
-                    
-                    <div className="flex items-center justify-between">
-                      <span className="text-muted-foreground">{companyDetails.phone}</span>
-                      <Phone className="h-4 w-4 text-muted-foreground" />
-                    </div>
+                  <div className="flex items-center justify-between py-2">
+                    <span className="text-sm text-slate-600">{companyDetails.phone}</span>
+                    <Phone className="h-4 w-4 text-slate-400" />
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </CardContent>
+          </Card>
 
-            {/* Company Entries */}
-            <Card className="shadow-small">
-              <CardContent className="p-6">
-                <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-card-foreground">ورودی‌های پارک</h3>
-                  
-                  <div className="flex flex-wrap gap-2">
-                    {companyDetails.categories.map((category, index) => (
-                      <Badge key={index} variant="secondary" className="text-sm">
-                        {category}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+          {/* Park Entries */}
+          <Card className="bg-white border border-slate-200 rounded-xl shadow-sm">
+            <CardContent className="p-4">
+              <div className="space-y-3">
+                <h3 className="text-lg font-semibold text-slate-800">ورودی‌های پارک</h3>
+                <p className="text-sm text-slate-600">ورودی اصلی، ورودی شمالی، ورودی شرقی</p>
+              </div>
+            </CardContent>
+          </Card>
 
-            {/* Action Buttons */}
-            <div className="flex gap-3 pt-4">
-              <Button asChild variant="outline" className="flex-1">
-                <Link to="/search">
-                  بازگشت
-                </Link>
-              </Button>
-              <Button asChild className="flex-1 gradient-primary">
-                <Link to="/map">
-                  نمایش مسیر روی نقشه
-                </Link>
-              </Button>
-            </div>
+          {/* Action Buttons */}
+          <div className="flex gap-3 pt-2">
+            <Button asChild variant="outline" className="flex-1 rounded-lg border-slate-300 text-slate-600">
+              <Link to="/search">
+                بازگشت
+              </Link>
+            </Button>
+            <Button asChild className="flex-1 rounded-lg bg-primary hover:bg-primary/90 text-white">
+              <Link to="/map">
+                نمایش مسیر روی نقشه
+              </Link>
+            </Button>
           </div>
         </div>
       </main>
