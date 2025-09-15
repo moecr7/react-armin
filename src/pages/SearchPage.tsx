@@ -109,14 +109,16 @@ const SearchPage = () => {
 
                       {/* Action Buttons */}
                       <div className="flex gap-3">
-                        <Button className="flex-1 gradient-primary">
-                          <Navigation className="h-4 w-4 ml-2" />
-                          نمایش مسیر
-                        </Button>
-                        <Button variant="outline" className="flex-1">
+                      <Button className="flex-1 gradient-primary">
+                        <Navigation className="h-4 w-4 ml-2" />
+                        نمایش مسیر
+                      </Button>
+                      <Button asChild variant="outline" className="flex-1">
+                        <Link to="/company/1">
                           <FileText className="h-4 w-4 ml-2" />
                           جزئیات
-                        </Button>
+                        </Link>
+                      </Button>
                       </div>
                     </div>
                   </CardContent>
