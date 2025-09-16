@@ -1,37 +1,54 @@
 import logoGolden from "@/assets/logo-golden.png";
+import repeateMusicIcon from "@/assets/repeate-music-icon.png";
+import mapIcon from "@/assets/map-icon.png";
 
 const Footer = () => {
   return (
     <footer className="bg-gray-100 p-6" dir="rtl">
       <div className="container mx-auto max-w-md">
         <div className="bg-gradient-to-b from-blue-900 to-slate-900 rounded-3xl p-8 text-white">
-          {/* Address and Working Hours */}
-          <div className="text-right mb-8">
-            <p className="text-sm text-blue-200 leading-relaxed">
-              آدرس: خیابان دانشگاه، ساعت کاری: صبح
-              <br />
-              تا ۶شب
-            </p>
-          </div>
+          <div className="flex gap-6">
+            {/* Left side - Main content */}
+            <div className="flex-1">
+              {/* Address and Working Hours */}
+              <div className="text-right mb-8">
+                <p className="text-sm text-blue-200 leading-relaxed">
+                  آدرس: خیابان دانشگاه، ساعت کاری: صبح
+                  <br />
+                  تا ۶شب
+                </p>
+              </div>
 
-          {/* Important Links */}
-          <div className="text-right mb-8">
-            <h4 className="text-white text-base font-medium mb-4">لینک های مهم</h4>
-            <div className="space-y-2 text-sm text-blue-200">
-              <div className="hover:text-white transition-colors cursor-pointer">خانه</div>
-              <div className="hover:text-white transition-colors cursor-pointer">نقشه</div>
-              <div className="hover:text-white transition-colors cursor-pointer">جستجو</div>
-              <div className="hover:text-white transition-colors cursor-pointer">جزئیات شرکت</div>
+              {/* Important Links */}
+              <div className="text-right mb-8">
+                <h4 className="text-white text-base font-medium mb-4">لینک های مهم</h4>
+                <div className="space-y-2 text-sm text-blue-200">
+                  <div className="hover:text-white transition-colors cursor-pointer">خانه</div>
+                  <div className="hover:text-white transition-colors cursor-pointer">نقشه</div>
+                  <div className="hover:text-white transition-colors cursor-pointer">جستجو</div>
+                  <div className="hover:text-white transition-colors cursor-pointer">جزئیات شرکت</div>
+                </div>
+              </div>
+
+              {/* Address Section */}
+              <div className="text-right mb-8">
+                <h4 className="text-white text-base font-medium mb-4">آدرس</h4>
+                <div className="text-sm text-blue-200 leading-relaxed">
+                  <p>تهران، خیابان دانشگاه</p>
+                  <p>پارک علم و فناوری تهران</p>
+                  <p>کد پستی: ۱۴۱۷۹۳۳۵۳۳</p>
+                </div>
+              </div>
             </div>
-          </div>
 
-          {/* Address Section */}
-          <div className="text-right mb-8">
-            <h4 className="text-white text-base font-medium mb-4">آدرس</h4>
-            <div className="text-sm text-blue-200 leading-relaxed">
-              <p>تهران، خیابان دانشگاه</p>
-              <p>پارک علم و فناوری تهران</p>
-              <p>کد پستی: ۱۴۱۷۹۳۳۵۳۳</p>
+            {/* Right side - Icons */}
+            <div className="flex flex-col justify-center items-center space-y-4">
+              <div className="w-12 h-12 flex items-center justify-center">
+                <img src={repeateMusicIcon} alt="Repeat Music" className="w-full h-full object-contain" />
+              </div>
+              <div className="w-12 h-12 flex items-center justify-center">
+                <img src={mapIcon} alt="Map" className="w-full h-full object-contain" />
+              </div>
             </div>
           </div>
 

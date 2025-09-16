@@ -45,11 +45,11 @@ const CompanyDetailsPage = () => {
                 <p className="text-sm text-slate-600">{companyDetails.field} • {companyDetails.code}</p>
                 
                 <div className="flex gap-2">
-                  <Button variant="outline" className="flex-1 text-sm py-2 rounded-lg border-slate-300 text-slate-600">
-                    کپی لینک
-                  </Button>
                   <Button className="flex-1 text-sm py-2 rounded-lg bg-primary hover:bg-primary/90 text-white">
                     نمایش مسیر روی نقشه
+                  </Button>
+                  <Button variant="outline" className="flex-1 text-sm py-2 rounded-lg border-slate-300 text-slate-600">
+                    کپی لینک
                   </Button>
                 </div>
               </div>
@@ -126,14 +126,14 @@ const CompanyDetailsPage = () => {
 
           {/* Action Buttons */}
           <div className="flex gap-3 pt-2">
-            <Button asChild variant="outline" className="flex-1 rounded-lg border-slate-300 text-slate-600">
-              <Link to="/search">
-                بازگشت
-              </Link>
-            </Button>
             <Button asChild className="flex-1 rounded-lg bg-primary hover:bg-primary/90 text-white">
               <Link to="/map">
                 نمایش مسیر روی نقشه
+              </Link>
+            </Button>
+            <Button asChild variant="outline" className="flex-1 rounded-lg border-slate-300 text-slate-600">
+              <Link to="/search">
+                بازگشت
               </Link>
             </Button>
           </div>
