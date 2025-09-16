@@ -128,13 +128,6 @@ const SearchPage = () => {
                     
                     <div className="flex gap-2 pt-2">
                       <Button 
-                        variant="outline" 
-                        size="sm" 
-                        className="flex-1 text-sm py-2 rounded-lg border-border hover:bg-secondary"
-                      >
-                        جزئیات
-                      </Button>
-                      <Button 
                         asChild 
                         size="sm" 
                         className="flex-1 text-sm py-2 rounded-lg bg-accent hover:bg-accent/90 text-accent-foreground"
@@ -142,6 +135,13 @@ const SearchPage = () => {
                         <Link to={`/company/${company.id}`}>
                           نمایش مسیر
                         </Link>
+                      </Button>
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="flex-1 text-sm py-2 rounded-lg border-border hover:bg-secondary"
+                      >
+                        جزئیات
                       </Button>
                     </div>
                   </div>
