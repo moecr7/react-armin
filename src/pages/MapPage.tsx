@@ -66,6 +66,10 @@ const MapPage = () => {
 
               {/* Map Controls */}
               <div className="flex items-center justify-between">
+                <Button variant="outline" className="border-slate-300 text-slate-600">
+                  مرکز کردن
+                </Button>
+                
                 <Select>
                   <SelectTrigger className="w-32 border-slate-200 rounded-lg bg-slate-50">
                     <SelectValue placeholder="ورودی اصلی" />
@@ -76,10 +80,6 @@ const MapPage = () => {
                     <SelectItem value="south">ورودی جنوبی</SelectItem>
                   </SelectContent>
                 </Select>
-                
-                <Button variant="outline" className="border-slate-300 text-slate-600">
-                  مرکز کردن
-                </Button>
               </div>
 
               {/* Zoom Controls */}
