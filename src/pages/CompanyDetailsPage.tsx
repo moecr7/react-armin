@@ -26,9 +26,9 @@ const CompanyDetailsPage = () => {
       <main className="pt-14">
         {/* Header Section */}
         <div className="bg-primary px-4 py-3">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between" dir="ltr">
             <Link to="/search" className="flex items-center text-primary-foreground hover:text-primary-light">
-              <ArrowLeft className="h-5 w-5 ml-2" />
+              <ArrowLeft className="h-5 w-5 mr-2" />
               بازگشت
             </Link>
             <h1 className="text-lg font-semibold text-primary-foreground">جزئیات شرکت</h1>
