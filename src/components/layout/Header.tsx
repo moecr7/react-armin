@@ -86,7 +86,7 @@ const Header = () => {
               <Link
                 key={item.href}
                 to={item.href}
-                className={`block text-xl font-medium text-foreground py-4 px-4 rounded-xl transition-all duration-300 hover:bg-foreground/10 hover:translate-x-2 hover:shadow-lg border-b border-foreground/20 ${
+                className={`block text-xl font-medium text-foreground py-4 px-4 rounded-xl transition-all duration-300 hover:bg-foreground/10 hover:translate-x-2 hover:shadow-lg border-b border-foreground/20 text-right ${
                   isActive(item.href) ? 'bg-foreground/20 translate-x-1' : ''
                 }`}
                 style={{ 
