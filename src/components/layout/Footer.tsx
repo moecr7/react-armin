@@ -1,5 +1,6 @@
 import { Crown, Mail, Phone, MapPin, Clock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   const quickLinks = [
@@ -43,20 +44,24 @@ const Footer = () => {
 
               {/* Company Info */}
               <div className="border-t border-slate-600 pt-6 space-y-4">
-                <div className="flex items-center justify-center space-x-3 rtl:space-x-reverse">
-                  <Crown className="h-6 w-6 text-yellow-400" />
-                  <span className="text-lg font-semibold text-white">پارک علم و فناوری</span>
+                <div className="flex items-center justify-start space-x-3 rtl:space-x-reverse">
+                  <div className="w-8 h-8 rounded bg-white/10 flex items-center justify-center p-1">
+                    <img src={logo} alt="پارک علم و فناوری" className="w-full h-full object-contain" />
+                  </div>
+                  <span className="text-lg font-semibold text-white">پارک علم و فناوری صنعتی دانشگاه صنعتی سهند تبریز</span>
                 </div>
                 
                 {/* Contact Info */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                  <div className="flex items-center justify-center space-x-2 rtl:space-x-reverse text-slate-300">
+                <div className="flex items-center justify-center space-x-4 rtl:space-x-reverse text-sm">
+                  <div className="flex items-center space-x-2 rtl:space-x-reverse text-slate-300">
                     <Mail className="h-4 w-4" />
                     <span>ایمیل</span>
                     <span className="font-medium">info@gmail.com</span>
                   </div>
                   
-                  <div className="flex items-center justify-center space-x-2 rtl:space-x-reverse text-slate-300">
+                  <div className="w-px h-6 bg-slate-600"></div>
+                  
+                  <div className="flex items-center space-x-2 rtl:space-x-reverse text-slate-300">
                     <Phone className="h-4 w-4" />
                     <span>شماره تماس</span>
                     <span className="font-medium">+98910 - 12558</span>
