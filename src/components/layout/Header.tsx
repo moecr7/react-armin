@@ -69,7 +69,7 @@ const Header = () => {
       }`}>
         <div className="p-6">
           {/* Close Button */}
-          <div className="flex justify-end mb-8">
+          <div className="flex justify-start mb-8">
             <Button
               variant="ghost"
               size="icon"
