@@ -25,6 +25,16 @@ const Footer = () => {
             </div>
           </div>
 
+          {/* Address Section */}
+          <div className="text-right mb-8">
+            <h4 className="text-white text-base font-medium mb-4">آدرس</h4>
+            <div className="text-sm text-blue-200 leading-relaxed">
+              <p>تهران، خیابان دانشگاه</p>
+              <p>پارک علم و فناوری تهران</p>
+              <p>کد پستی: ۱۴۱۷۹۳۳۵۳۳</p>
+            </div>
+          </div>
+
           {/* Logo Section */}
           <div className="flex items-center justify-start space-x-3 space-x-reverse mb-8">
             <div className="w-12 h-12 flex items-center justify-center">

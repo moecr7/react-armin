@@ -74,9 +74,9 @@ const Header = () => {
               variant="ghost"
               size="icon"
               onClick={() => setIsMenuOpen(false)}
-              className="text-foreground hover:bg-foreground/10 rounded-full transition-all duration-300 hover:scale-110"
+              className="bg-blue-500 hover:bg-blue-600 rounded-full transition-all duration-300 hover:scale-110"
             >
-              <X className="h-6 w-6" />
+              <X className="h-6 w-6 text-white" />
             </Button>
           </div>
 
