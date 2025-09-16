@@ -22,25 +22,6 @@ const Hero = () => {
         
         {/* Content Container */}
         <div className="relative z-10 min-h-screen flex flex-col px-6 py-6">
-          {/* Header with Menu and Logo */}
-          <div className="flex items-center justify-between mb-8">
-            {/* Menu Button */}
-            <button className="p-4 bg-blue-600 rounded-2xl shadow-lg hover:bg-blue-700 transition-colors">
-              <div className="w-6 h-6 flex flex-col justify-center space-y-1">
-                <div className="w-full h-0.5 bg-white rounded"></div>
-                <div className="w-full h-0.5 bg-white rounded"></div>
-                <div className="w-full h-0.5 bg-white rounded"></div>
-              </div>
-            </button>
-            
-            {/* Logo */}
-            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-yellow-400 to-amber-600 flex items-center justify-center shadow-lg">
-              <div className="w-10 h-10 rounded-full border-2 border-white/30 flex items-center justify-center">
-                <div className="w-6 h-6 bg-white/80 rounded-full"></div>
-              </div>
-            </div>
-          </div>
-          
           {/* Main Content - Centered */}
           <div className="flex-1 flex items-center justify-center">
             <div className="text-center text-white max-w-sm mx-auto space-y-8">
