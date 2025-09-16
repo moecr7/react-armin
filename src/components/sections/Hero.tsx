@@ -22,22 +22,6 @@ const Hero = () => {
         
         {/* Content Container */}
         <div className="relative z-10 min-h-screen flex flex-col px-6 py-6">
-          {/* Header with Hamburger Menu */}
-          <div className="flex items-center justify-between mb-8">
-            {/* Hamburger Menu Button - Figma Style */}
-            <button className="p-3 bg-accent rounded-xl shadow-lg hover:bg-accent/90 transition-colors">
-              <div className="w-6 h-6 flex flex-col justify-center space-y-1.5">
-                <div className="w-full h-0.5 bg-accent-foreground rounded-full"></div>
-                <div className="w-4 h-0.5 bg-accent-foreground rounded-full"></div>
-                <div className="w-full h-0.5 bg-accent-foreground rounded-full"></div>
-              </div>
-            </button>
-            
-            {/* Logo - Figma Style */}
-            <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center shadow-lg p-2">
-              <img src={logo} alt="پارک علم و فناوری" className="w-full h-full object-contain" />
-            </div>
-          </div>
           <div className="flex-1 flex items-center justify-center">
             <div className="text-center text-white max-w-sm mx-auto space-y-8">
               {/* Main Title */}
