@@ -21,7 +21,12 @@ const Footer = () => {
 
               {/* Important Links */}
               <div className="text-right mb-8">
-                <h4 className="text-white text-base font-medium mb-4">لینک های مهم</h4>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-6 h-6 flex items-center justify-center">
+                    <img src={repeateMusicIcon} alt="Links" className="w-full h-full object-contain" />
+                  </div>
+                  <h4 className="text-white text-base font-medium">لینک های مهم</h4>
+                </div>
                 <div className="space-y-2 text-sm text-blue-200">
                   <div className="hover:text-white transition-colors cursor-pointer">خانه</div>
                   <div className="hover:text-white transition-colors cursor-pointer">نقشه</div>
@@ -32,7 +37,12 @@ const Footer = () => {
 
               {/* Address Section */}
               <div className="text-right mb-8">
-                <h4 className="text-white text-base font-medium mb-4">آدرس</h4>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-6 h-6 flex items-center justify-center">
+                    <img src={mapIcon} alt="Address" className="w-full h-full object-contain" />
+                  </div>
+                  <h4 className="text-white text-base font-medium">آدرس</h4>
+                </div>
                 <div className="text-sm text-blue-200 leading-relaxed">
                   <p>تهران، خیابان دانشگاه</p>
                   <p>پارک علم و فناوری تهران</p>
@@ -42,13 +52,7 @@ const Footer = () => {
             </div>
 
             {/* Right side - Icons */}
-            <div className="flex flex-col justify-center items-center space-y-4">
-              <div className="w-12 h-12 flex items-center justify-center">
-                <img src={repeateMusicIcon} alt="Repeat Music" className="w-full h-full object-contain" />
-              </div>
-              <div className="w-12 h-12 flex items-center justify-center">
-                <img src={mapIcon} alt="Map" className="w-full h-full object-contain" />
-              </div>
+            <div className="flex flex-col justify-end items-center space-y-4 pb-8">
             </div>
           </div>
 
