@@ -72,10 +72,11 @@ const Footer = () => {
         {/* Copyright */}
         <div className="text-right mt-6 text-slate-400 text-sm">
           <div className="flex items-center justify-end space-x-2 space-x-reverse">
+            <p>&copy; ۱۴۰۳ تمامی حقوق محفوظ است.</p>
+            <span>پارک علم و فناوری</span>
             <div className="w-6 h-6 rounded bg-white/10 flex items-center justify-center p-1">
               <img src={logo} alt="پارک علم و فناوری" className="w-full h-full object-contain" />
             </div>
-            <p>&copy; ۱۴۰۳ پارک علم و فناوری. تمامی حقوق محفوظ است.</p>
           </div>
         </div>
       </div>
