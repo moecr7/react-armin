@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Crown } from "lucide-react";
+import { X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import logoGolden from "@/assets/logo-golden.jpg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,15 +21,17 @@ const Header = () => {
       <header className="fixed top-0 left-0 right-0 z-50 bg-accent shadow-medium">
         <div className="px-4">
           <div className="flex items-center justify-between h-14">
-            {/* Mobile Menu Button */}
-            <Button
-              variant="ghost"
-              size="icon"
-              className="text-accent-foreground hover:bg-accent/90 p-2"
+            {/* Mobile Menu Button - Figma Style */}
+            <button
+              className="p-3 bg-accent-foreground/10 hover:bg-accent-foreground/20 rounded-xl transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              <Menu className="h-6 w-6" />
-            </Button>
+              <div className="w-6 h-6 flex flex-col justify-center space-y-1.5">
+                <div className="w-full h-0.5 bg-accent-foreground rounded-full"></div>
+                <div className="w-4 h-0.5 bg-accent-foreground rounded-full"></div>
+                <div className="w-full h-0.5 bg-accent-foreground rounded-full"></div>
+              </div>
+            </button>
 
             {/* Logo and Title */}
             <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
@@ -43,7 +44,9 @@ const Header = () => {
 
             {/* Logo */}
             <Link to="/">
-              <img src={logoGolden} alt="لوگو" className="h-10 w-10 rounded-full" />
+              <div className="w-10 h-10 rounded-xl bg-accent-foreground/10 flex items-center justify-center">
+                <span className="text-accent-foreground font-bold text-lg">پ</span>
+              </div>
             </Link>
           </div>
         </div>
