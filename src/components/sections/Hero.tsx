@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Map, ArrowLeft, Menu } from "lucide-react";
 import { Link } from "react-router-dom";
+import businessTeamMeeting from "@/assets/business-team-meeting.jpg";
 import techDeveloper from "@/assets/tech-developer.jpg";
-import businessMeeting from "@/assets/business-meeting.jpg";
 
 const Hero = () => {
   return (
@@ -12,8 +12,8 @@ const Hero = () => {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img 
-            src={techDeveloper} 
-            alt="پارک علم و فناوری - توسعه دهنده فناوری"
+            src={businessTeamMeeting} 
+            alt="پارک علم و فناوری - جلسه کاری تیم"
             className="w-full h-full object-cover"
           />
           {/* Dark Overlay */}
@@ -92,8 +92,8 @@ const Hero = () => {
             <div className="order-2 lg:order-1 relative">
               <div className="relative">
                 <img 
-                  src={businessMeeting} 
-                  alt="همکاری و کار تیمی در پارک علم و فناوری"
+                  src={techDeveloper} 
+                  alt="توسعه دهنده فناوری در پارک علم و فناوری"
                   className="w-full h-auto rounded-3xl shadow-2xl"
                 />
               </div>
