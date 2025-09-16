@@ -20,7 +20,7 @@ const CompanyDetailsPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-slate-50" dir="rtl">
       <Header />
       
       <main className="pt-14">

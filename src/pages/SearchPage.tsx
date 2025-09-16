@@ -71,22 +71,40 @@ const SearchPage = () => {
           </div>
 
           {/* Filter Buttons */}
-          <div className="flex flex-wrap gap-2 justify-center max-w-lg mx-auto">
-            {filterOptions.map((filter) => (
+          <div className="flex flex-wrap gap-2 max-w-lg mx-auto">
+            {/* همه button on the left */}
+            <div className="flex justify-start">
               <Button
-                key={filter.id}
-                variant={activeFilter === filter.id ? "default" : "secondary"}
+                variant={activeFilter === "all" ? "default" : "secondary"}
                 size="sm"
-                onClick={() => setActiveFilter(filter.id)}
+                onClick={() => setActiveFilter("all")}
                 className={`rounded-full px-4 py-2 text-sm font-medium ${
-                  activeFilter === filter.id
+                  activeFilter === "all"
                     ? "bg-accent text-accent-foreground shadow-sm"
                     : "bg-secondary text-secondary-foreground hover:bg-accent hover:text-accent-foreground"
                 }`}
               >
-                {filter.label}
+                همه
               </Button>
-            ))}
+            </div>
+            {/* Other buttons centered */}
+            <div className="flex flex-wrap gap-2 justify-center flex-1">
+              {filterOptions.slice(1).map((filter) => (
+                <Button
+                  key={filter.id}
+                  variant={activeFilter === filter.id ? "default" : "secondary"}
+                  size="sm"
+                  onClick={() => setActiveFilter(filter.id)}
+                  className={`rounded-full px-4 py-2 text-sm font-medium ${
+                    activeFilter === filter.id
+                      ? "bg-accent text-accent-foreground shadow-sm"
+                      : "bg-secondary text-secondary-foreground hover:bg-accent hover:text-accent-foreground"
+                  }`}
+                >
+                  {filter.label}
+                </Button>
+              ))}
+            </div>
           </div>
 
           {/* Results Count */}
