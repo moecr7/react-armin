@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Building2, Users, Target, Lightbulb } from "lucide-react";
 import { Link } from "react-router-dom";
+import techDeveloper from "@/assets/tech-developer.jpg";
 
 const About = () => {
   const features = [
@@ -77,7 +78,7 @@ const About = () => {
               <CardContent className="p-0">
                 <div className="relative h-96 overflow-hidden">
                   <img 
-                    src="/src/assets/tech-developer.jpg" 
+                    src={techDeveloper} 
                     alt="توسعه‌دهنده فناوری در حال کار"
                     className="w-full h-full object-cover"
                   />

@@ -14,7 +14,7 @@ const Hero = () => {
           <img 
             src={businessTeamMeeting} 
             alt="پارک علم و فناوری - جلسه کاری تیم"
-            className="w-full h-full object-cover object-top"
+            className="w-full h-full object-cover object-center"
           />
           {/* Dark Overlay */}
           <div className="absolute inset-0 bg-black/50"></div>

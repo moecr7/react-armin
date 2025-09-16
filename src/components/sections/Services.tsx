@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Building2, Users, Target, CheckCircle } from "lucide-react";
+import officeCollaboration from "@/assets/office-collaboration.jpg";
 
 const Services = () => {
   const services = [
@@ -88,7 +89,7 @@ const Services = () => {
               <CardContent className="p-0">
                 <div className="relative h-96 overflow-hidden">
                   <img 
-                    src="/src/assets/office-collaboration.jpg" 
+                    src={officeCollaboration} 
                     alt="همکاری تیمی در محیط کاری"
                     className="w-full h-full object-cover"
                   />
