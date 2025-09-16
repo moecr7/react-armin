@@ -26,7 +26,7 @@ const Footer = () => {
           </div>
 
           {/* Logo Section */}
-          <div className="flex items-center justify-end space-x-3 space-x-reverse mb-8">
+          <div className="flex items-center justify-start space-x-3 space-x-reverse mb-8">
             <div className="w-12 h-12 flex items-center justify-center">
               <img src={logoGolden} alt="پارک علم و فناوری" className="w-full h-full object-contain" />
             </div>
