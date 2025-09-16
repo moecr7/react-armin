@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Map, ArrowLeft, Menu } from "lucide-react";
 import { Link } from "react-router-dom";
 import businessTeamMeeting from "@/assets/business-team-meeting.jpg";
+import logo from "@/assets/logo.png";
 
 const Hero = () => {
   return (
@@ -33,8 +34,8 @@ const Hero = () => {
             </button>
             
             {/* Logo - Figma Style */}
-            <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center shadow-lg">
-              <div className="text-accent-foreground font-bold text-lg">پ</div>
+            <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center shadow-lg p-2">
+              <img src={logo} alt="پارک علم و فناوری" className="w-full h-full object-contain" />
             </div>
           </div>
           <div className="flex-1 flex items-center justify-center">
