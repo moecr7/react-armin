@@ -19,14 +19,14 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-primary shadow-medium">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-accent shadow-medium">
         <div className="px-4">
           <div className="flex items-center justify-between h-14">
             {/* Mobile Menu Button */}
             <Button
               variant="ghost"
               size="icon"
-              className="text-primary-foreground hover:bg-primary/90 p-2"
+              className="text-accent-foreground hover:bg-accent/90 p-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               <Menu className="h-6 w-6" />
@@ -35,7 +35,7 @@ const Header = () => {
             {/* Logo and Title */}
             <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
               <div className="flex items-center space-x-2 rtl:space-x-reverse">
-                <span className="text-lg font-bold text-primary-foreground">
+                <span className="text-lg font-bold text-accent-foreground">
                   پارک علم و فناوری
                 </span>
               </div>
@@ -59,7 +59,7 @@ const Header = () => {
       />
       
       {/* Menu Panel */}
-      <div className={`fixed top-0 right-0 z-50 h-full w-80 bg-primary shadow-2xl transform transition-all duration-500 ease-out ${isMenuOpen 
+      <div className={`fixed top-0 right-0 z-50 h-full w-80 bg-accent shadow-2xl transform transition-all duration-500 ease-out ${isMenuOpen 
         ? 'translate-x-0' 
         : 'translate-x-full'
       }`}>
@@ -70,7 +70,7 @@ const Header = () => {
               variant="ghost"
               size="icon"
               onClick={() => setIsMenuOpen(false)}
-              className="text-primary-foreground hover:bg-primary-foreground/10 rounded-full transition-all duration-300 hover:scale-110"
+              className="text-accent-foreground hover:bg-accent-foreground/10 rounded-full transition-all duration-300 hover:scale-110"
             >
               <X className="h-6 w-6" />
             </Button>
@@ -82,8 +82,8 @@ const Header = () => {
               <Link
                 key={item.href}
                 to={item.href}
-                className={`block text-xl font-medium text-primary-foreground py-4 px-4 rounded-xl transition-all duration-300 hover:bg-primary-foreground/10 hover:translate-x-2 hover:shadow-lg border-b border-primary-foreground/20 ${
-                  isActive(item.href) ? 'bg-primary-foreground/20 translate-x-1' : ''
+                className={`block text-xl font-medium text-accent-foreground py-4 px-4 rounded-xl transition-all duration-300 hover:bg-accent-foreground/10 hover:translate-x-2 hover:shadow-lg border-b border-accent-foreground/20 ${
+                  isActive(item.href) ? 'bg-accent-foreground/20 translate-x-1' : ''
                 }`}
                 style={{ 
                   animationDelay: `${index * 100}ms`,
@@ -100,7 +100,7 @@ const Header = () => {
           <div className="mt-10">
             <Button 
               asChild 
-              className="w-full bg-primary-foreground text-primary text-lg py-6 rounded-xl hover:bg-primary-foreground/90 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="w-full bg-accent-foreground text-accent text-lg py-6 rounded-xl hover:bg-accent-foreground/90 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               <Link to="/search" onClick={() => setIsMenuOpen(false)}>
                 شروع جستجو
