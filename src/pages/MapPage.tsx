@@ -21,11 +21,11 @@ const MapPage = () => {
         {/* Header Section */}
         <div className="bg-primary px-4 py-3">
           <div className="flex items-center justify-between">
+            <h1 className="text-lg font-semibold text-primary-foreground">نقشه</h1>
             <Link to="/" className="flex items-center text-primary-foreground hover:text-primary-light">
               <ArrowLeft className="h-5 w-5 ml-2" />
               بازگشت
             </Link>
-            <h1 className="text-lg font-semibold text-primary-foreground">نقشه</h1>
           </div>
         </div>
 
