@@ -19,13 +19,13 @@ const Hero = () => {
       <div className="relative z-10 max-w-sm w-full">
         <div className="backdrop-blur-md bg-black/20 border border-white/20 rounded-3xl p-6 shadow-2xl">
           <div className="text-center text-white space-y-4">
-            {/* تیتر اصلی */}
+            {/* تیتر */}
             <h1 className="text-xl md:text-2xl font-bold leading-tight">
               جستجو و مسیریابی در{" "}
               <span className="text-blue-400">پارک علم و فناوری</span>
             </h1>
 
-            {/* توضیحات */}
+            {/* توضیح */}
             <p className="text-sm leading-relaxed text-gray-200">
               معرفی شرکت‌ها، دستاوردها و رویدادهای پارک علم و فناوری.
               برای جستجو و مسیریابی از دکمه‌های زیر استفاده کنید.
@@ -33,18 +33,21 @@ const Hero = () => {
 
             {/* دکمه‌ها */}
             <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
+              {/* مشاهده نقشه */}
               <Button
                 asChild
-                variant="secondary"
-                className="bg-white text-black hover:bg-gray-200 rounded-xl px-6 py-3 text-sm font-semibold shadow-md"
-              >
-                <Link to="/search">شروع جستجو</Link>
-              </Button>
-              <Button
-                asChild
-                className="bg-blue-600 hover:bg-blue-700 text-white rounded-xl px-6 py-3 text-sm font-semibold shadow-md"
+                className="bg-blue-600 hover:bg-blue-700 text-white rounded-xl px-6 py-3 text-sm font-semibold shadow-md w-full sm:w-auto"
               >
                 <Link to="/map">مشاهده نقشه</Link>
+              </Button>
+
+              {/* شروع جستجو - outlined مشکی/سفید */}
+              <Button
+                asChild
+                variant="outline"
+                className="bg-white text-black border border-black hover:bg-gray-100 rounded-xl px-6 py-3 text-sm font-semibold shadow-md w-full sm:w-auto"
+              >
+                <Link to="/search">شروع جستجو</Link>
               </Button>
             </div>
           </div>
