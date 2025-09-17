@@ -5,7 +5,7 @@ import businessTeamMeeting from "@/assets/business-team-meeting.jpg";
 const Hero = () => {
   return (
     <section className="min-h-screen relative overflow-hidden flex items-center justify-center px-6">
-      {/* پس‌زمینه */}
+      {/* بک‌گراند */}
       <div className="absolute inset-0">
         <img
           src={businessTeamMeeting}
@@ -18,7 +18,7 @@ const Hero = () => {
       {/* کارت شیشه‌ای */}
       <div className="relative z-10 max-w-sm w-full">
         <div className="backdrop-blur-md bg-black/20 border border-white/20 rounded-3xl p-6 shadow-2xl">
-          <div className="text-center text-white space-y-4">
+          <div className="text-center text-white space-y-5">
             {/* تیتر */}
             <h1 className="text-xl md:text-2xl font-bold leading-tight">
               جستجو و مسیریابی در{" "}
@@ -41,7 +41,7 @@ const Hero = () => {
                 <Link to="/map">مشاهده نقشه</Link>
               </Button>
 
-              {/* شروع جستجو - outlined مشکی/سفید */}
+              {/* شروع جستجو */}
               <Button
                 asChild
                 variant="outline"
