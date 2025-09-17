@@ -4,9 +4,12 @@ import mapIcon from "@/assets/map-icon.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-b from-blue-900 to-slate-900 text-white" dir="rtl">
+    <footer
+      className="bg-gradient-to-b from-blue-900 to-slate-900 text-white"
+      dir="rtl"
+    >
       <div className="mx-auto max-w-md p-8">
-        {/* بالا: دو ستون (چپ محتوا / راست آیکون‌ها) */}
+        {/* بخش بالایی */}
         <div className="flex gap-6">
           {/* ستون چپ - محتوای اصلی */}
           <div className="flex-1">
@@ -59,8 +62,8 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* ستون راست - (می‌توانید آیکون شبکه‌های اجتماعی اضافه کنید) */}
-          <div className="flex flex-col justify-end items-center space-y-4 pb-8" />
+          {/* ستون راست (خالی برای آیکون‌ها) */}
+          <div className="flex flex-col justify-end items-center space-y-4 pb-8"></div>
         </div>
 
         {/* لوگو */}
@@ -84,7 +87,7 @@ const Footer = () => {
           </div>
 
           {/* جداکننده */}
-          <div className="w-px h-8 bg-blue-700" />
+          <div className="w-px h-8 bg-blue-700"></div>
 
           {/* ایمیل */}
           <div>
