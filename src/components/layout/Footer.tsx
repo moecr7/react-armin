@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="grid grid-cols-1 gap-6">
             {/* آدرس و ساعات کاری */}
             <div>
-              <div className="flex items-start gap-2 justify-end">
+              <div className="flex items-start gap-2 justify-end text-right">
                 <div className="w-5 h-5 mt-0.5 opacity-80 shrink-0">
                   <img src={mapIcon} alt="آدرس" className="w-full h-full object-contain" />
                 </div>
