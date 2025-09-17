@@ -42,14 +42,14 @@ const Footer = () => {
 
           {/* کارت پایین (Pill) */}
           <div className="mt-8 rounded-2xl bg-gradient-to-b from-[#142D5B] to-[#0F254A] ring-1 ring-white/10 shadow-[0_6px_18px_rgba(0,0,0,0.3)] px-5 py-4">
-            {/* لوگو + عنوان */}
-            <div className="flex items-center justify-center gap-2" dir="rtl">
+            {/* لوگو + عنوان راست‌چین */}
+            <div className="flex items-center justify-start gap-2" dir="rtl">
               <img
                 src={logoGolden}
                 alt="پارک علم و فناوری"
                 className="h-8 w-8 sm:h-9 sm:w-9 object-contain"
               />
-              <h3 className="text-sm sm:text-base font-medium text-white/95 text-right">
+              <h3 className="text-sm sm:text-base font-medium text-white/95">
                 پارک علم و فناوری
               </h3>
             </div>
@@ -59,11 +59,11 @@ const Footer = () => {
 
             {/* ردیف اطلاعات تماس */}
             <div className="mt-3 grid grid-cols-3 items-center text-center" dir="rtl">
-              {/* ایمیل */}
+              {/* شماره تماس (الان اول) */}
               <div className="col-span-1">
-                <div className="text-[12px] text-blue-100/80 mb-1">ایمیل</div>
-                <div className="text-[13px] sm:text-sm font-medium tracking-wide">
-                  info@gmail.com
+                <div className="text-[12px] text-blue-100/80 mb-1">شماره تماس</div>
+                <div className="text-[13px] sm:text-sm font-medium">
+                  +98910 - 12558
                 </div>
               </div>
 
@@ -72,11 +72,11 @@ const Footer = () => {
                 <div className="h-6 w-px bg-white/20" />
               </div>
 
-              {/* شماره تماس */}
+              {/* ایمیل (الان دوم) */}
               <div className="col-span-1">
-                <div className="text-[12px] text-blue-100/80 mb-1">شماره تماس</div>
-                <div className="text-[13px] sm:text-sm font-medium">
-                  +98910 - 12558
+                <div className="text-[12px] text-blue-100/80 mb-1">ایمیل</div>
+                <div className="text-[13px] sm:text-sm font-medium tracking-wide">
+                  info@gmail.com
                 </div>
               </div>
             </div>
