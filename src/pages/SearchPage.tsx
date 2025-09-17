@@ -51,9 +51,9 @@ const SearchPage = () => {
         <div className="px-4 py-4">
           <div className="flex items-center justify-between">
             <h1 className="text-xl font-bold text-blue-600">جستجو و فیلتر شرکت‌ها</h1>
-            <Link to="/" className="flex items-center text-blue-600 hover:text-blue-700">
-              <ArrowLeft className="h-5 w-5 ml-2" />
-              <span className="text-sm">بازگشت</span>
+            <Link to="/" className="flex items-center text-blue-600 hover:text-blue-700 text-lg">
+              <ArrowLeft className="h-6 w-6 ml-2" />
+              <span className="text-base font-medium">بازگشت</span>
             </Link>
           </div>
         </div>
