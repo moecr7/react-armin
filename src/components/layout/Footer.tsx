@@ -45,9 +45,6 @@ const Footer = () => {
           <div className="mt-6 rounded-[18px] bg-[linear-gradient(180deg,rgba(255,255,255,0.06)_0%,rgba(255,255,255,0.03)_100%)] backdrop-blur-md border border-white/10 px-4 py-5">
             {/* لوگو + عنوان در ردیف بالا */}
             <div className="flex items-center justify-end gap-3 mb-4">
-              <h3 className="text-[18px] font-medium tracking-tight whitespace-nowrap text-right">
-                پارک علم و فناوری
-              </h3>
               <div className="h-10 w-10 shrink-0">
                 <img
                   src={logoGolden}
@@ -55,6 +52,9 @@ const Footer = () => {
                   className="h-full w-full object-contain"
                 />
               </div>
+              <h3 className="text-[18px] font-medium tracking-tight whitespace-nowrap text-right">
+                پارک علم و فناوری
+              </h3>
             </div>
 
             {/* اطلاعات تماس در ردیف پایین */}
