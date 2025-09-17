@@ -67,8 +67,8 @@ const SearchPage = () => {
           {/* Company Dropdown */}
           <div className="max-w-md mx-auto">
             <Select value={selectedCompany} onValueChange={setSelectedCompany}>
-              <SelectTrigger className="w-full h-12 text-base border-border rounded-xl bg-background px-4">
-                <SelectValue placeholder="نام شرکت" />
+              <SelectTrigger className="w-full h-12 text-base border-border rounded-xl bg-background px-4 flex flex-row-reverse justify-between items-center">
+                <SelectValue placeholder="نام شرکت" className="text-right flex-1" />
               </SelectTrigger>
               <SelectContent>
                 {mockCompanies.map(company => (
