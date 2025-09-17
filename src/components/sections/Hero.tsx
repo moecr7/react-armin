@@ -36,7 +36,7 @@ const Hero = () => {
               {/* مشاهده نقشه */}
               <Button
                 asChild
-                className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-8 py-3 text-base font-medium shadow-lg w-full sm:w-auto"
+                className="bg-blue-600 hover:bg-blue-700 text-white rounded-xl px-6 py-3 text-sm font-semibold shadow-md w-full sm:w-auto"
               >
                 <Link to="/map">مشاهده نقشه</Link>
               </Button>
