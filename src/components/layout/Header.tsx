@@ -32,14 +32,16 @@ const Header = () => {
             "
           >
             <div className="flex items-center justify-between gap-3 px-3 md:px-4 h-12 md:h-14">
-              {/* Menu trigger (RTL: سمت چپ بصری) */}
-              <button
-                className="h-9 w-9 md:h-10 md:w-10 rounded-xl bg-white/10 hover:bg-white/20 grid place-items-center transition-colors"
-                onClick={() => setIsMenuOpen(true)}
-                aria-label="باز کردن منو"
-              >
-                <Menu className="h-5 w-5 md:h-6 md:w-6 text-white" />
-              </button>
+              {/* Logo (RTL: سمت چپ بصری) */}
+              <Link to="/" className="flex items-center justify-start w-9 md:w-10">
+                <div className="h-8 w-8 md:h-9 md:w-9 rounded-xl bg-white/10 p-1 flex items-center justify-center">
+                  <img
+                    src={logo}
+                    alt="پارک علم و فناوری"
+                    className="w-full h-full object-contain drop-shadow-sm"
+                  />
+                </div>
+              </Link>
 
               {/* Title (center) */}
               <div className="flex-1 text-center">
@@ -50,16 +52,14 @@ const Header = () => {
                 </Link>
               </div>
 
-              {/* Logo (right) */}
-              <Link to="/" className="flex items-center justify-end w-9 md:w-10">
-                <div className="h-8 w-8 md:h-9 md:w-9 rounded-xl bg-white/10 p-1 flex items-center justify-center">
-                  <img
-                    src={logo}
-                    alt="پارک علم و فناوری"
-                    className="w-full h-full object-contain drop-shadow-sm"
-                  />
-                </div>
-              </Link>
+              {/* Menu trigger (right) */}
+              <button
+                className="h-9 w-9 md:h-10 md:w-10 rounded-xl bg-white/10 hover:bg-white/20 grid place-items-center transition-colors"
+                onClick={() => setIsMenuOpen(true)}
+                aria-label="باز کردن منو"
+              >
+                <Menu className="h-5 w-5 md:h-6 md:w-6 text-white" />
+              </button>
             </div>
           </div>
         </div>
