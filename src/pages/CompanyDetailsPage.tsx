@@ -25,10 +25,10 @@ const CompanyDetailsPage = () => {
       
       <main className="pt-14">
         {/* Header Section */}
-        <div className="bg-primary px-4 py-3">
+        <div className="px-4 py-3">
           <div className="flex items-center justify-between">
-            <h1 className="text-lg font-semibold text-primary-foreground">جزئیات شرکت</h1>
-            <Link to="/search" className="flex items-center text-primary-foreground hover:text-primary-light">
+            <h1 className="text-lg font-semibold text-blue-600">جزئیات شرکت</h1>
+            <Link to="/search" className="flex items-center text-blue-600 hover:text-blue-700">
               <ArrowLeft className="h-5 w-5 ml-2" />
               بازگشت
             </Link>
