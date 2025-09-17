@@ -7,8 +7,8 @@ import logo from "@/assets/logo.png";
 const Hero = () => {
   return (
     <>
-      {/* Frame 50 - Mobile Hero with Background Image */}
-      <section className="min-h-screen relative overflow-hidden">
+      {/* Compact Glass Hero Section */}
+      <section className="min-h-screen relative overflow-hidden flex items-center justify-center px-6">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img 
@@ -17,44 +17,29 @@ const Hero = () => {
             className="w-full h-full object-cover object-center"
           />
           {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-black/50"></div>
+          <div className="absolute inset-0 bg-black/60"></div>
         </div>
         
-        {/* Content Container */}
-        <div className="relative z-10 min-h-screen flex flex-col px-6 py-6">
-          <div className="flex-1 flex items-center justify-center">
-            <div className="text-center text-white max-w-sm mx-auto space-y-8">
+        {/* Glass Card Container */}
+        <div className="relative z-10 max-w-md mx-auto">
+          <div className="backdrop-blur-md bg-black/20 border border-white/20 rounded-3xl p-8 shadow-2xl">
+            <div className="text-center text-white space-y-6">
               {/* Main Title */}
-              <h1 className="text-4xl font-bold leading-tight text-white">
-                پارک علم و فناوری
+              <h1 className="text-2xl font-bold leading-tight text-blue-300">
+                جستجو و مسیریابی در پارک علم و فناوری
               </h1>
               
-              {/* Subtitle */}
-              <h2 className="text-xl font-medium text-blue-300 leading-relaxed">
-                جستجو و مسیریابی در پارک علم و فناوری
-              </h2>
-              
               {/* Description */}
-              <p className="text-base leading-relaxed text-gray-200 px-4">
+              <p className="text-sm leading-relaxed text-gray-200">
                 معرفی شرکت ها، دستاوردها و رویدادهای پارک علم و فناوری برای جستجو و مسیریابی از دکمه زیر استفاده کنید.
               </p>
               
-              {/* Buttons */}
-              <div className="flex flex-col gap-4 pt-6">
-                 <Button 
-                   asChild 
-                   variant="outline"
-                   className="border-2 border-white text-white hover:bg-white hover:text-primary py-4 px-8 rounded-2xl text-base font-medium bg-transparent transition-all duration-300"
-                 >
-                   <Link to="/search">
-                     شروع جستجو
-                   </Link>
-                 </Button>
-                 
-                 <Button 
-                   asChild 
-                   className="bg-accent hover:bg-accent/90 text-accent-foreground py-4 px-8 rounded-2xl text-base font-medium shadow-lg transition-all duration-300"
-                 >
+              {/* Button */}
+              <div className="pt-4">
+                <Button 
+                  asChild 
+                  className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-8 rounded-2xl text-base font-medium shadow-lg transition-all duration-300 w-full"
+                >
                   <Link to="/map">
                     مشاهده نقشه
                   </Link>
