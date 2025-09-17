@@ -16,7 +16,7 @@ const Footer = () => {
                 <div className="w-5 h-5 mt-0.5 opacity-80 shrink-0">
                   <img src={mapIcon} alt="آدرس" className="w-full h-full object-contain" />
                 </div>
-                <p className="text-[14px] leading-7 text-white/90 text-left">
+                <p className="text-[14px] leading-7 text-white/90 text-right">
                   آدرس: خیابون دانشگاه، ساعت کاری: 6 صبح
                   <br />
                   تا 8 شب
@@ -32,7 +32,7 @@ const Footer = () => {
                 </div>
                 <h4 className="text-[16px] font-medium">لینک های مهم</h4>
               </div>
-              <nav className="text-[16px] space-y-3 text-left">
+              <nav className="text-[16px] space-y-3 text-right">
                 <a className="block hover:text-white/90 transition-colors cursor-pointer">خانه</a>
                 <a className="block hover:underline underline-offset-8 cursor-pointer">نقشه</a>
                 <a className="block hover:text-white/90 transition-colors cursor-pointer">جستوجو</a>
@@ -45,7 +45,7 @@ const Footer = () => {
           <div className="mt-6 rounded-[18px] bg-[linear-gradient(180deg,rgba(255,255,255,0.06)_0%,rgba(255,255,255,0.03)_100%)] backdrop-blur-md border border-white/10 px-4 py-5">
             {/* لوگو + عنوان در ردیف بالا */}
             <div className="flex items-center justify-end gap-3 mb-4">
-              <h3 className="text-[18px] font-medium tracking-tight whitespace-nowrap text-left">
+              <h3 className="text-[18px] font-medium tracking-tight whitespace-nowrap text-right">
                 پارک علم و فناوری
               </h3>
               <div className="h-10 w-10 shrink-0">
@@ -60,7 +60,7 @@ const Footer = () => {
             {/* اطلاعات تماس در ردیف پایین */}
             <div className="flex items-center justify-center gap-5">
               {/* شماره تماس */}
-              <div className="text-left">
+              <div className="text-right">
                 <div className="text-white text-[16px] font-medium ltr:font-medium">
                   +98910 - 12558
                 </div>
@@ -71,7 +71,7 @@ const Footer = () => {
               <div className="w-px h-8 bg-white/20" />
 
               {/* ایمیل */}
-              <div className="text-left">
+              <div className="text-right">
                 <div className="text-white text-[16px] font-medium">info@gmail.com</div>
                 <div className="text-white/70 text-[12px] mt-0.5">ایمیل</div>
               </div>
