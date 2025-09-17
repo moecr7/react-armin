@@ -47,7 +47,8 @@ const Footer = () => {
 
             {/* بخش آدرس */}
             <div className="text-right mb-8">
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center justify-between mb-4">
+                <h4 className="text-white text-base font-medium">آدرس</h4>
                 <div className="w-6 h-6 flex items-center justify-center">
                   <img
                     src={mapIcon}
@@ -55,12 +56,6 @@ const Footer = () => {
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <h4 className="text-white text-base font-medium">آدرس</h4>
-              </div>
-              <div className="text-sm text-white/70 leading-relaxed">
-                <p>تهران، خیابان دانشگاه</p>
-                <p>پارک علم و فناوری تهران</p>
-                <p>کد پستی: ۱۴۱۷۹۳۳۵۳۳</p>
               </div>
             </div>
           </div>
