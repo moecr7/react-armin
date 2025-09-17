@@ -43,40 +43,37 @@ const Footer = () => {
 
           {/* کارت پایینی شیشه‌ای */}
           <div className="mt-6 rounded-[18px] bg-[linear-gradient(180deg,rgba(255,255,255,0.06)_0%,rgba(255,255,255,0.03)_100%)] backdrop-blur-md border border-white/10 px-4 py-5">
-            {/* ردیف بالا: لوگو راست + عنوان کنار لوگو، اطلاعات تماس در سمت مقابل */}
-            <div className="flex items-center justify-between gap-4">
-              {/* گروه راست: لوگو + عنوان کنار لوگو (دقیق طبق عکس) */}
-              <div className="flex items-center gap-3">
-                <div className="h-10 w-10 shrink-0">
-                  <img
-                    src={logoGolden}
-                    alt="پارک علم و فناوری"
-                    className="h-full w-full object-contain"
-                  />
+            {/* لوگو + عنوان در ردیف بالا */}
+            <div className="flex items-center justify-end gap-3 mb-4">
+              <h3 className="text-[18px] font-medium tracking-tight whitespace-nowrap text-right">
+                پارک علم و فناوری
+              </h3>
+              <div className="h-10 w-10 shrink-0">
+                <img
+                  src={logoGolden}
+                  alt="پارک علم و فناوری"
+                  className="h-full w-full object-contain"
+                />
+              </div>
+            </div>
+
+            {/* اطلاعات تماس در ردیف پایین */}
+            <div className="flex items-center justify-center gap-5">
+              {/* شماره تماس */}
+              <div className="text-right">
+                <div className="text-white text-[16px] font-medium ltr:font-medium">
+                  +98910 - 12558
                 </div>
-                <h3 className="text-[18px] font-medium tracking-tight whitespace-nowrap">
-                  پارک علم و فناوری
-                </h3>
+                <div className="text-white/70 text-[12px] mt-0.5">شماره تماس</div>
               </div>
 
-              {/* گروه چپ: شماره تماس | جداکننده | ایمیل */}
-              <div className="flex items-center gap-5">
-                {/* شماره تماس (سمت راست این گروه؛ یعنی نزدیک وسط کارت) */}
-                <div className="text-right">
-                  <div className="text-white text-[16px] font-medium ltr:font-medium">
-                    +98910 - 12558
-                  </div>
-                  <div className="text-white/70 text-[12px] mt-0.5">شماره تماس</div>
-                </div>
+              {/* جداکننده عمودی */}
+              <div className="w-px h-8 bg-white/20" />
 
-                {/* جداکننده عمودی */}
-                <div className="w-px h-8 bg-white/20" />
-
-                {/* ایمیل (سمت چپ) */}
-                <div className="text-left">
-                  <div className="text-white text-[16px] font-medium">info@gmail.com</div>
-                  <div className="text-white/70 text-[12px] mt-0.5 text-right">ایمیل</div>
-                </div>
+              {/* ایمیل */}
+              <div className="text-right">
+                <div className="text-white text-[16px] font-medium">info@gmail.com</div>
+                <div className="text-white/70 text-[12px] mt-0.5">ایمیل</div>
               </div>
             </div>
           </div>
