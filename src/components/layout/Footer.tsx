@@ -32,7 +32,7 @@ const Footer = () => {
                 </div>
                 <h4 className="text-[16px] font-medium">لینک های مهم</h4>
               </div>
-              <nav className="text-[16px] space-y-3 text-right mr-7">
+              <nav className="text-[16px] space-y-4 text-right mr-7">
                 <a className="block story-link cursor-pointer">خانه</a>
                 <a className="block story-link cursor-pointer">نقشه</a>
                 <a className="block story-link cursor-pointer">جستجو</a>
