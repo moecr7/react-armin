@@ -40,20 +40,20 @@ const Hero = () => {
           <div className="flex gap-3">
             <Button 
               asChild 
-              variant="outline"
-              className="border-2 border-white/50 text-white hover:bg-white/20 py-3 px-6 rounded-2xl text-sm font-medium bg-transparent transition-all duration-300 flex-1"
+              className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-2xl text-sm font-medium shadow-lg transition-all duration-300 flex-1"
             >
-              <Link to="/search">
-                شروع جستجو
+              <Link to="/map">
+                مشاهده نقشه
               </Link>
             </Button>
             
             <Button 
               asChild 
-              className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-2xl text-sm font-medium shadow-lg transition-all duration-300 flex-1"
+              variant="outline"
+              className="border-2 border-white/50 text-white hover:bg-white/20 py-3 px-6 rounded-2xl text-sm font-medium bg-transparent transition-all duration-300 flex-1"
             >
-              <Link to="/map">
-                مشاهده نقشه
+              <Link to="/search">
+                شروع جستجو
               </Link>
             </Button>
           </div>
