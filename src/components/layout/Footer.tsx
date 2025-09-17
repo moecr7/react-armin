@@ -5,7 +5,10 @@ import mapIcon from "@/assets/map-icon.png";
 const Footer = () => {
   return (
     <footer
-      className="bg-slate-900 text-white rounded-t-lg"
+      className="text-white rounded-t-lg"
+      style={{
+        background: "linear-gradient(180deg, #001B78 0%, #131C3B 50%, #000827 100%)"
+      }}
       dir="rtl"
     >
       <div className="mx-auto max-w-md p-8">
