@@ -12,19 +12,21 @@ const Footer = () => {
       dir="rtl"
     >
       <div className="mx-auto max-w-md p-8">
-        {/* بخش بالایی */}
+        {/* آیکون آدرس در بالا سمت چپ */}
+        <div className="flex justify-start mb-4">
+          <div className="w-6 h-6 flex items-center justify-center">
+            <img
+              src={mapIcon}
+              alt="آدرس"
+              className="w-full h-full object-contain"
+            />
+          </div>
+        </div>
+
+        {/* بخش اصلی */}
         <div className="flex gap-6">
           {/* ستون چپ - محتوای اصلی */}
           <div className="flex-1">
-            {/* آدرس و ساعت کاری */}
-            <div className="text-right mb-8">
-              <p className="text-sm text-white/70 leading-relaxed">
-                آدرس: خیابان دانشگاه، ساعت کاری: صبح
-                <br />
-                تا ۶ شب
-              </p>
-            </div>
-
             {/* لینک‌های مهم */}
             <div className="text-right mb-8">
               <div className="flex items-center gap-3 mb-4">
@@ -42,20 +44,6 @@ const Footer = () => {
                 <div className="hover:text-white transition-colors cursor-pointer">نقشه</div>
                 <div className="hover:text-white transition-colors cursor-pointer">جستجو</div>
                 <div className="hover:text-white transition-colors cursor-pointer">جزئیات شرکت</div>
-              </div>
-            </div>
-
-            {/* بخش آدرس */}
-            <div className="text-right mb-8">
-              <div className="flex items-center justify-between mb-4">
-                <h4 className="text-white text-base font-medium">آدرس</h4>
-                <div className="w-6 h-6 flex items-center justify-center">
-                  <img
-                    src={mapIcon}
-                    alt="آدرس"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
               </div>
             </div>
           </div>
