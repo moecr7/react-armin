@@ -33,29 +33,25 @@ const Footer = () => {
               <h4 className="text-sm sm:text-base font-medium">لینک های مهم</h4>
             </div>
             <ul className="space-y-2 text-[15px] sm:text-base">
-              <li className="text-white/90 hover:text-white transition-colors cursor-pointer">خانه</li>
-              <li className="text-white/90 hover:text-white transition-colors cursor-pointer">نقشه</li>
-              <li className="text-white/90 hover:text-white transition-colors cursor-pointer">جستجو</li>
-              <li className="text-white/90 hover:text-white transition-colors cursor-pointer">جزئیات شرکت</li>
+              <li className="text-white/90 hover:text-white hover:underline transition-colors cursor-pointer">خانه</li>
+              <li className="text-white/90 hover:text-white hover:underline transition-colors cursor-pointer">نقشه</li>
+              <li className="text-white/90 hover:text-white hover:underline transition-colors cursor-pointer">جستجو</li>
+              <li className="text-white/90 hover:text-white hover:underline transition-colors cursor-pointer">جزئیات شرکت</li>
             </ul>
           </section>
 
           {/* کارت پایین (Pill) */}
           <div className="mt-8 rounded-2xl bg-gradient-to-b from-[#142D5B] to-[#0F254A] ring-1 ring-white/10 shadow-[0_6px_18px_rgba(0,0,0,0.3)] px-5 py-4">
-            {/* سطر لوگو و عنوان */}
-            <div className="flex items-center justify-between" dir="rtl">
-              <div className="flex-1 flex justify-start">
-                <h3 className="text-sm sm:text-base font-medium text-white/95 text-right">
-                  پارک علم و فناوری
-                </h3>
-              </div>
-              <div className="flex-1 flex justify-end">
-                <img
-                  src={logoGolden}
-                  alt="پارک علم و فناوری"
-                  className="h-8 w-8 sm:h-9 sm:w-9 object-contain"
-                />
-              </div>
+            {/* لوگو + عنوان */}
+            <div className="flex items-center justify-center gap-2" dir="rtl">
+              <img
+                src={logoGolden}
+                alt="پارک علم و فناوری"
+                className="h-8 w-8 sm:h-9 sm:w-9 object-contain"
+              />
+              <h3 className="text-sm sm:text-base font-medium text-white/95 text-right">
+                پارک علم و فناوری
+              </h3>
             </div>
 
             {/* جداکننده ظریف */}
