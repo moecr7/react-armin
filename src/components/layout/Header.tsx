@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "@/assets/logo.png"; // لوگوی طلایی راست
+import logo from "@/assets/logo.png"; // لوگوی طلایی
 
-const HomeHeader = () => {
+const AppHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
@@ -18,28 +18,24 @@ const HomeHeader = () => {
 
   return (
     <>
-      {/* Sticky top header */}
+      {/* Sticky header (همه صفحات) */}
       <header dir="rtl" className="sticky top-0 z-50 w-full">
-        {/* پس‌زمینه‌ی صفحه شفاف می‌ماند؛ فقط کپسول */}
         <div className="mx-2 my-2">
           {/* کپسول گرادیانی دقیقاً مثل طرح */}
           <div className="
-              h-[64px] w-full
-              rounded-[16px]
-              bg-gradient-to-tr from-[#0F2F6A] to-[#1E4E9A]
-              shadow-[0_8px_24px_rgba(2,6,23,0.25)]
-            ">
+            h-[64px] w-full rounded-[16px]
+            bg-gradient-to-tr from-[#0F2F6A] to-[#1E4E9A]
+            shadow-[0_8px_24px_rgba(2,6,23,0.25)]
+          ">
             <div className="h-full px-3 flex items-center justify-between">
               {/* دکمه منو (آبی گرد) */}
               <button
                 onClick={() => setIsMenuOpen(true)}
                 aria-label="باز کردن منو"
                 className="
-                  h-[40px] w-[40px]
-                  rounded-[12px]
+                  h-[40px] w-[40px] rounded-[12px]
                   bg-[#3B6BFF] hover:bg-[#2F59E0]
-                  grid place-items-center
-                  transition-colors
+                  grid place-items-center transition-colors
                 "
               >
                 <span className="block w-[20px] h-[2px] bg-white rounded-full" />
@@ -47,9 +43,8 @@ const HomeHeader = () => {
                 <span className="block w-[20px] h-[2px] bg-white rounded-full mt-[6px]" />
               </button>
 
-              {/* عنوان وسط (پیکسل‌پرفکت) */}
-              <div className="flex-1 text-center -mr-[40px]"> 
-                {/* -mr برای حفظ مرکز واقعی با وجود دکمه سمت چپ */}
+              {/* عنوان وسط؛ با آفست برای حفظ مرکز هندسی */}
+              <div className="flex-1 text-center -mr-[40px]">
                 <Link to="/" className="inline-block">
                   <span className="text-white font-bold text-[18px] leading-none tracking-tight">
                     پارک علم و فناوری
@@ -70,10 +65,7 @@ const HomeHeader = () => {
         </div>
       </header>
 
-      {/* فاصله برای محتوا زیر هدر (هم‌قد کپسول) */}
-      <div className="h-[68px]" />
-
-      {/* Overlay موبایل */}
+      {/* اوورلی منو */}
       <div
         className={`fixed inset-0 z-40 transition-all duration-500 ease-in-out ${
           isMenuOpen
@@ -138,4 +130,4 @@ const HomeHeader = () => {
   );
 };
 
-export default HomeHeader;
+export default AppHeader;
