@@ -48,10 +48,10 @@ const SearchPage = () => {
       
       <main className="pt-14">
         {/* Header Section */}
-        <div className="bg-primary px-4 py-4">
+        <div className="px-4 py-4">
           <div className="flex items-center justify-between">
-            <h1 className="text-xl font-bold text-primary-foreground"> جستجو</h1>
-            <Link to="/" className="flex items-center text-primary-foreground hover:text-accent">
+            <h1 className="text-xl font-bold text-primary"> جستجو</h1>
+            <Link to="/" className="flex items-center text-primary hover:text-accent">
               <ArrowLeft className="h-5 w-5 ml-2" />
               <span className="text-sm">بازگشت</span>
             </Link>
