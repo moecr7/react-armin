@@ -99,11 +99,11 @@ const SearchPage = () => {
                   <div className="space-y-3">
                     <div>
                       <div className="flex items-center gap-2">
-                        <h3 className="text-lg font-bold text-primary text-left flex-1">{company.name}</h3>
                         <Building2 className="h-5 w-5 text-primary flex-shrink-0" />
+                        <h3 className="text-lg font-bold text-primary text-right flex-1">{company.name}</h3>
                       </div>
-                      <p className="text-sm text-muted-foreground mt-1 text-left">{company.field}</p>
-                      <p className="text-sm text-muted-foreground text-left">{company.code}</p>
+                      <p className="text-sm text-muted-foreground mt-1 text-right">{company.field}</p>
+                      <p className="text-sm text-muted-foreground text-right">{company.code}</p>
                     </div>
                     
                     <div className="flex gap-2 pt-2">
