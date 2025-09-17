@@ -21,7 +21,7 @@ const Hero = () => {
         </div>
         
         {/* Glass Card Container */}
-        <div className="relative z-10 max-w-md mx-auto">
+        <div className="relative z-10 max-w-md mx-auto space-y-6">
           <div className="backdrop-blur-md bg-black/20 border border-white/20 rounded-3xl p-8 shadow-2xl">
             <div className="text-center text-white space-y-6">
               {/* Main Title */}
@@ -33,29 +33,29 @@ const Hero = () => {
               <p className="text-sm leading-relaxed text-gray-200">
                 معرفی شرکت ها، دستاوردها و رویدادهای پارک علم و فناوری برای جستجو و مسیریابی از دکمه زیر استفاده کنید.
               </p>
-              
-              {/* Buttons */}
-              <div className="pt-4 flex gap-3">
-                <Button 
-                  asChild 
-                  variant="outline"
-                  className="border-2 border-white/30 text-white hover:bg-white/10 py-3 px-6 rounded-2xl text-sm font-medium bg-transparent transition-all duration-300 flex-1"
-                >
-                  <Link to="/search">
-                    شروع جستجو
-                  </Link>
-                </Button>
-                
-                <Button 
-                  asChild 
-                  className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-2xl text-sm font-medium shadow-lg transition-all duration-300 flex-1"
-                >
-                  <Link to="/map">
-                    مشاهده نقشه
-                  </Link>
-                </Button>
-              </div>
             </div>
+          </div>
+          
+          {/* Buttons Below Glass Card */}
+          <div className="flex gap-3">
+            <Button 
+              asChild 
+              variant="outline"
+              className="border-2 border-white/50 text-white hover:bg-white/20 py-3 px-6 rounded-2xl text-sm font-medium bg-transparent transition-all duration-300 flex-1"
+            >
+              <Link to="/search">
+                شروع جستجو
+              </Link>
+            </Button>
+            
+            <Button 
+              asChild 
+              className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-2xl text-sm font-medium shadow-lg transition-all duration-300 flex-1"
+            >
+              <Link to="/map">
+                مشاهده نقشه
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
