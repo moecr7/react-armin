@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { X, Menu } from "lucide-react";
+import { X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.png"; // لوگوی طلایی/زرد سمت راست
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,51 +19,46 @@ const Header = () => {
 
   return (
     <>
-      {/* Sticky Header (capsule gradient) */}
-      <header dir="rtl" className="sticky top-0 z-50 w-full">
-        <div className="backdrop-blur supports-[backdrop-filter]:bg-transparent">
-          <div
-            className="
-              mx-3 my-2
-              rounded-2xl md:rounded-3xl
-              bg-gradient-to-tr from-indigo-900 to-blue-600
-              text-white
-              shadow-[0_8px_24px_rgba(2,6,23,0.25)]
-            "
-          >
-            <div className="flex items-center justify-between gap-3 px-3 md:px-4 h-12 md:h-14">
-              {/* Menu trigger (left) */}
-              <button
-                className="h-9 w-9 md:h-10 md:w-10 rounded-xl bg-blue-600 hover:bg-blue-700 grid place-items-center transition-colors shadow-lg"
-                onClick={() => setIsMenuOpen(true)}
-                aria-label="باز کردن منو"
-              >
-                <Menu className="h-5 w-5 md:h-6 md:w-6 text-white" />
-              </button>
-
-              {/* Title (center) */}
-              <div className="flex-1 text-center">
-                <Link to="/" className="inline-block">
-                  <span className="text-sm md:text-base font-semibold tracking-tight">
-                    پارک علم و فناوری
-                  </span>
-                </Link>
+      {/* Sticky Header - سبک تصویر */}
+      <header dir="rtl" className="fixed top-0 left-0 right-0 z-50">
+        <div className="px-3">
+          <div className="relative flex items-center justify-between h-12">
+            {/* دکمه منو (سمت چپ بصری) */}
+            <button
+              className="p-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 transition-colors shadow-sm"
+              onClick={() => setIsMenuOpen(true)}
+              aria-label="باز کردن منو"
+            >
+              <div className="w-5 h-5 flex flex-col justify-center space-y-1">
+                <span className="w-full h-0.5 bg-white rounded-full" />
+                <span className="w-3/4 h-0.5 bg-white rounded-full" />
+                <span className="w-full h-0.5 bg-white rounded-full" />
               </div>
+            </button>
 
-              {/* Logo (right) */}
-              <Link to="/" className="flex items-center justify-end w-9 md:w-10">
-                <div className="h-8 w-8 md:h-9 md:w-9 rounded-xl bg-gradient-to-br from-yellow-400 to-orange-500 p-1 flex items-center justify-center shadow-lg">
-                  <img
-                    src={logo}
-                    alt="پارک علم و فناوری"
-                    className="w-full h-full object-contain drop-shadow-sm"
-                  />
-                </div>
+            {/* عنوان وسط */}
+            <div className="absolute left-1/2 -translate-x-1/2">
+              <Link to="/" className="block">
+                <span className="text-base md:text-lg font-bold text-white drop-shadow-sm whitespace-nowrap">
+                  پارک علم و فناوری
+                </span>
               </Link>
             </div>
+
+            {/* لوگو سمت راست */}
+            <Link to="/" className="flex items-center justify-center">
+              <img
+                src={logo}
+                alt="پارک علم و فناوری"
+                className="h-8 w-auto object-contain"
+              />
+            </Link>
           </div>
         </div>
       </header>
+
+      {/* فاصله برای محتوای زیر هدر */}
+      <div className="h-12" />
 
       {/* Mobile Menu Overlay */}
       <div
@@ -75,7 +70,7 @@ const Header = () => {
         onClick={() => setIsMenuOpen(false)}
       />
 
-      {/* Menu Panel (RTL: سمت راست) */}
+      {/* پنل منو */}
       <aside
         className={`fixed top-0 right-0 z-50 h-full w-80 bg-white shadow-2xl transform transition-all duration-500 ease-out ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
@@ -83,7 +78,7 @@ const Header = () => {
         dir="rtl"
       >
         <div className="p-6">
-          {/* Close Button */}
+          {/* دکمه بستن */}
           <div className="flex justify-start mb-8">
             <Button
               variant="ghost"
@@ -96,7 +91,7 @@ const Header = () => {
             </Button>
           </div>
 
-          {/* Menu Items */}
+          {/* آیتم‌های منو */}
           <nav className="space-y-2">
             {navItems.map((item, index) => (
               <Link
@@ -116,7 +111,7 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Start Search Button */}
+          {/* دکمه شروع جستجو */}
           <div className="mt-10">
             <Button
               asChild
