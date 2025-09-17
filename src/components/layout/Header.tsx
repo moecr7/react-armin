@@ -19,33 +19,31 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-accent shadow-medium">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-blue-600 shadow-lg">
         <div className="px-4">
           <div className="flex items-center justify-between h-14">
-            {/* Mobile Menu Button - Figma Style */}
+            {/* Mobile Menu Button */}
             <button
-              className="p-3 bg-accent-foreground/10 hover:bg-accent-foreground/20 rounded-xl transition-colors"
+              className="p-2 hover:bg-white/10 rounded-lg transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              <div className="w-6 h-6 flex flex-col justify-center space-y-1.5">
-                <div className="w-full h-0.5 bg-accent-foreground rounded-full"></div>
-                <div className="w-4 h-0.5 bg-accent-foreground rounded-full"></div>
-                <div className="w-full h-0.5 bg-accent-foreground rounded-full"></div>
+              <div className="w-6 h-6 flex flex-col justify-center space-y-1">
+                <div className="w-full h-0.5 bg-white rounded-full"></div>
+                <div className="w-full h-0.5 bg-white rounded-full"></div>
+                <div className="w-full h-0.5 bg-white rounded-full"></div>
               </div>
             </button>
 
-            {/* Logo and Title */}
-            <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-              <div className="flex items-center space-x-2 rtl:space-x-reverse">
-                <span className="text-lg font-bold text-accent-foreground">
-                  پارک علم و فناوری
-                </span>
-              </div>
+            {/* Title */}
+            <Link to="/" className="flex items-center">
+              <span className="text-lg font-semibold text-white">
+                پارک علم و فناوری
+              </span>
             </Link>
 
-            {/* Logo */}
+            {/* Golden Logo */}
             <Link to="/">
-              <div className="w-10 h-10 rounded-xl bg-accent-foreground/10 flex items-center justify-center p-1">
+              <div className="w-10 h-10 rounded-lg bg-yellow-400/90 flex items-center justify-center p-1 shadow-md">
                 <img src={logo} alt="پارک علم و فناوری" className="w-full h-full object-contain" />
               </div>
             </Link>
