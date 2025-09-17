@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "@/assets/logo.png"; // لوگوی طلایی/زرد سمت راست
+import logo from "@/assets/logo.png"; // لوگوی طلایی راست
 
-const Header = () => {
+const HomeHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
@@ -14,53 +14,66 @@ const Header = () => {
     { href: "/map", label: "نقشه" },
     { href: "/company/1", label: "جزئیات شرکت" },
   ];
-
   const isActive = (href: string) => location.pathname === href;
 
   return (
     <>
-      {/* Sticky Header - سبک تصویر */}
-      <header dir="rtl" className="fixed top-0 left-0 right-0 z-50">
-        <div className="px-3">
-          <div className="relative flex items-center justify-between h-12">
-            {/* دکمه منو (سمت چپ بصری) */}
-            <button
-              className="p-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 transition-colors shadow-sm"
-              onClick={() => setIsMenuOpen(true)}
-              aria-label="باز کردن منو"
-            >
-              <div className="w-5 h-5 flex flex-col justify-center space-y-1">
-                <span className="w-full h-0.5 bg-white rounded-full" />
-                <span className="w-3/4 h-0.5 bg-white rounded-full" />
-                <span className="w-full h-0.5 bg-white rounded-full" />
-              </div>
-            </button>
+      {/* Sticky top header */}
+      <header dir="rtl" className="sticky top-0 z-50 w-full">
+        {/* پس‌زمینه‌ی صفحه شفاف می‌ماند؛ فقط کپسول */}
+        <div className="mx-2 my-2">
+          {/* کپسول گرادیانی دقیقاً مثل طرح */}
+          <div className="
+              h-[64px] w-full
+              rounded-[16px]
+              bg-gradient-to-tr from-[#0F2F6A] to-[#1E4E9A]
+              shadow-[0_8px_24px_rgba(2,6,23,0.25)]
+            ">
+            <div className="h-full px-3 flex items-center justify-between">
+              {/* دکمه منو (آبی گرد) */}
+              <button
+                onClick={() => setIsMenuOpen(true)}
+                aria-label="باز کردن منو"
+                className="
+                  h-[40px] w-[40px]
+                  rounded-[12px]
+                  bg-[#3B6BFF] hover:bg-[#2F59E0]
+                  grid place-items-center
+                  transition-colors
+                "
+              >
+                <span className="block w-[20px] h-[2px] bg-white rounded-full" />
+                <span className="block w-[14px] h-[2px] bg-white rounded-full mt-[6px]" />
+                <span className="block w-[20px] h-[2px] bg-white rounded-full mt-[6px]" />
+              </button>
 
-            {/* عنوان وسط */}
-            <div className="absolute left-1/2 -translate-x-1/2">
-              <Link to="/" className="block">
-                <span className="text-base md:text-lg font-bold text-white drop-shadow-sm whitespace-nowrap">
-                  پارک علم و فناوری
-                </span>
+              {/* عنوان وسط (پیکسل‌پرفکت) */}
+              <div className="flex-1 text-center -mr-[40px]"> 
+                {/* -mr برای حفظ مرکز واقعی با وجود دکمه سمت چپ */}
+                <Link to="/" className="inline-block">
+                  <span className="text-white font-bold text-[18px] leading-none tracking-tight">
+                    پارک علم و فناوری
+                  </span>
+                </Link>
+              </div>
+
+              {/* لوگو سمت راست */}
+              <Link to="/" className="h-[40px] w-[40px] grid place-items-center">
+                <img
+                  src={logo}
+                  alt="پارک علم و فناوری"
+                  className="h-[36px] w-auto object-contain"
+                />
               </Link>
             </div>
-
-            {/* لوگو سمت راست */}
-            <Link to="/" className="flex items-center justify-center">
-              <img
-                src={logo}
-                alt="پارک علم و فناوری"
-                className="h-8 w-auto object-contain"
-              />
-            </Link>
           </div>
         </div>
       </header>
 
-      {/* فاصله برای محتوای زیر هدر */}
-      <div className="h-12" />
+      {/* فاصله برای محتوا زیر هدر (هم‌قد کپسول) */}
+      <div className="h-[68px]" />
 
-      {/* Mobile Menu Overlay */}
+      {/* Overlay موبایل */}
       <div
         className={`fixed inset-0 z-40 transition-all duration-500 ease-in-out ${
           isMenuOpen
@@ -70,15 +83,14 @@ const Header = () => {
         onClick={() => setIsMenuOpen(false)}
       />
 
-      {/* پنل منو */}
+      {/* پنل منو راست */}
       <aside
+        dir="rtl"
         className={`fixed top-0 right-0 z-50 h-full w-80 bg-white shadow-2xl transform transition-all duration-500 ease-out ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
-        dir="rtl"
       >
         <div className="p-6">
-          {/* دکمه بستن */}
           <div className="flex justify-start mb-8">
             <Button
               variant="ghost"
@@ -91,9 +103,8 @@ const Header = () => {
             </Button>
           </div>
 
-          {/* آیتم‌های منو */}
           <nav className="space-y-2">
-            {navItems.map((item, index) => (
+            {navItems.map((item, i) => (
               <Link
                 key={item.href}
                 to={item.href}
@@ -101,7 +112,7 @@ const Header = () => {
                   isActive(item.href) ? "bg-foreground/20 translate-x-1" : ""
                 }`}
                 style={{
-                  animationDelay: `${index * 100}ms`,
+                  animationDelay: `${i * 100}ms`,
                   animation: isMenuOpen ? "slide-in-right 0.6s ease-out forwards" : "none",
                 }}
                 onClick={() => setIsMenuOpen(false)}
@@ -111,7 +122,6 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* دکمه شروع جستجو */}
           <div className="mt-10">
             <Button
               asChild
@@ -128,4 +138,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HomeHeader;
