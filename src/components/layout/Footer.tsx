@@ -43,9 +43,12 @@ const Footer = () => {
           {/* کارت پایین (Pill) */}
           <div className="mt-8 rounded-2xl bg-gradient-to-b from-[#142D5B] to-[#0F254A] ring-1 ring-white/10 shadow-[0_6px_18px_rgba(0,0,0,0.3)] px-5 py-4">
             {/* سطر لوگو و عنوان */}
-            <div className="flex items-center justify-between">
-              <div className="flex-1" />
-              <h3 className="text-sm sm:text-base font-medium text-white/95">پارک علم و فناوری</h3>
+            <div className="flex items-center justify-between" dir="rtl">
+              <div className="flex-1 flex justify-start">
+                <h3 className="text-sm sm:text-base font-medium text-white/95 text-right">
+                  پارک علم و فناوری
+                </h3>
+              </div>
               <div className="flex-1 flex justify-end">
                 <img
                   src={logoGolden}
@@ -59,11 +62,13 @@ const Footer = () => {
             <div className="mt-3 h-px w-full bg-white/10" />
 
             {/* ردیف اطلاعات تماس */}
-            <div className="mt-3 grid grid-cols-3 items-center text-center">
+            <div className="mt-3 grid grid-cols-3 items-center text-center" dir="rtl">
               {/* ایمیل */}
               <div className="col-span-1">
                 <div className="text-[12px] text-blue-100/80 mb-1">ایمیل</div>
-                <div className="text-[13px] sm:text-sm font-medium tracking-wide">info@gmail.com</div>
+                <div className="text-[13px] sm:text-sm font-medium tracking-wide">
+                  info@gmail.com
+                </div>
               </div>
 
               {/* جداکننده عمودی */}
@@ -74,7 +79,9 @@ const Footer = () => {
               {/* شماره تماس */}
               <div className="col-span-1">
                 <div className="text-[12px] text-blue-100/80 mb-1">شماره تماس</div>
-                <div className="text-[13px] sm:text-sm font-medium">+98910 - 12558</div>
+                <div className="text-[13px] sm:text-sm font-medium">
+                  +98910 - 12558
+                </div>
               </div>
             </div>
           </div>
