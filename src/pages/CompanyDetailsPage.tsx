@@ -95,19 +95,19 @@ const CompanyDetailsPage = () => {
                 <h3 className="text-lg font-semibold text-slate-800">اطلاعات تماس</h3>
                 
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between py-2">
+                  <div className="flex items-center py-2">
                     <span className="text-sm text-slate-600">{companyDetails.email}</span>
-                    <Mail className="h-4 w-4 text-slate-400" />
+                    <Mail className="h-4 w-4 text-slate-400 mr-2" />
                   </div>
                   
-                  <div className="flex items-center justify-between py-2">
+                  <div className="flex items-center py-2">
                     <span className="text-sm text-slate-600">{companyDetails.website}</span>
-                    <ExternalLink className="h-4 w-4 text-slate-400" />
+                    <ExternalLink className="h-4 w-4 text-slate-400 mr-2" />
                   </div>
                   
-                  <div className="flex items-center justify-between py-2">
+                  <div className="flex items-center py-2">
                     <span className="text-sm text-slate-600">{companyDetails.phone}</span>
-                    <Phone className="h-4 w-4 text-slate-400" />
+                    <Phone className="h-4 w-4 text-slate-400 mr-2" />
                   </div>
                 </div>
               </div>
