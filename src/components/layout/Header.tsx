@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { X } from "lucide-react";
+import { X, Menu } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "@/assets/logo.png"; // لوگوی طلایی
+import logo from "@/assets/logo.png";
 
 const AppHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,17 +18,36 @@ const AppHeader = () => {
 
   return (
     <>
-      {/* Sticky header (همه صفحات) */}
+      {/* Sticky header for all pages */}
       <header dir="rtl" className="sticky top-0 z-50 w-full">
         <div className="mx-2 my-2">
-          {/* کپسول گرادیانی دقیقاً مثل طرح */}
+          {/* کپسول گرادیانی */}
           <div className="
             h-[64px] w-full rounded-[16px]
             bg-gradient-to-tr from-[#0F2F6A] to-[#1E4E9A]
             shadow-[0_8px_24px_rgba(2,6,23,0.25)]
           ">
-            <div className="h-full px-3 flex items-center justify-between">
-              {/* دکمه منو (آبی گرد) */}
+            {/* گرید 3ستونه: [40px | 1fr | 40px] برای مرکز دقیق عنوان */}
+            <div className="grid grid-cols-[40px_1fr_40px] items-center h-full px-3">
+              {/* ستون 1 (سمت چپ بصری): لوگو */}
+              <Link to="/" className="h-[40px] w-[40px] grid place-items-center">
+                <img
+                  src={logo}
+                  alt="پارک علم و فناوری"
+                  className="h-[36px] w-auto object-contain"
+                />
+              </Link>
+
+              {/* ستون وسط: عنوان */}
+              <div className="text-center">
+                <Link to="/" className="inline-block">
+                  <span className="text-white font-bold text-[18px] leading-none tracking-tight">
+                    پارک علم و فناوری
+                  </span>
+                </Link>
+              </div>
+
+              {/* ستون 3 (سمت راست بصری): دکمه منو */}
               <button
                 onClick={() => setIsMenuOpen(true)}
                 aria-label="باز کردن منو"
@@ -38,28 +57,8 @@ const AppHeader = () => {
                   grid place-items-center transition-colors
                 "
               >
-                <span className="block w-[20px] h-[2px] bg-white rounded-full" />
-                <span className="block w-[14px] h-[2px] bg-white rounded-full mt-[6px]" />
-                <span className="block w-[20px] h-[2px] bg-white rounded-full mt-[6px]" />
+                <Menu className="w-[20px] h-[20px] text-white" />
               </button>
-
-              {/* عنوان وسط؛ با آفست برای حفظ مرکز هندسی */}
-              <div className="flex-1 text-center -mr-[40px]">
-                <Link to="/" className="inline-block">
-                  <span className="text-white font-bold text-[18px] leading-none tracking-tight">
-                    پارک علم و فناوری
-                  </span>
-                </Link>
-              </div>
-
-              {/* لوگو سمت راست */}
-              <Link to="/" className="h-[40px] w-[40px] grid place-items-center">
-                <img
-                  src={logo}
-                  alt="پارک علم و فناوری"
-                  className="h-[36px] w-auto object-contain"
-                />
-              </Link>
             </div>
           </div>
         </div>
@@ -75,7 +74,7 @@ const AppHeader = () => {
         onClick={() => setIsMenuOpen(false)}
       />
 
-      {/* پنل منو راست */}
+      {/* پنل منو از سمت راست */}
       <aside
         dir="rtl"
         className={`fixed top-0 right-0 z-50 h-full w-80 bg-white shadow-2xl transform transition-all duration-500 ease-out ${
@@ -83,6 +82,7 @@ const AppHeader = () => {
         }`}
       >
         <div className="p-6">
+          {/* بستن */}
           <div className="flex justify-start mb-8">
             <Button
               variant="ghost"
@@ -95,6 +95,7 @@ const AppHeader = () => {
             </Button>
           </div>
 
+          {/* آیتم‌ها */}
           <nav className="space-y-2">
             {navItems.map((item, i) => (
               <Link
@@ -114,6 +115,7 @@ const AppHeader = () => {
             ))}
           </nav>
 
+          {/* CTA */}
           <div className="mt-10">
             <Button
               asChild
