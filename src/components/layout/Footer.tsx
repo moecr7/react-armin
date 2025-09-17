@@ -5,7 +5,7 @@ import mapIcon from "@/assets/map-icon.png";
 const Footer = () => {
   return (
     <footer
-      className="bg-gradient-to-b from-blue-900 to-slate-900 text-white"
+      className="gradient-primary text-primary-foreground rounded-t-lg"
       dir="rtl"
     >
       <div className="mx-auto max-w-md p-8">
@@ -15,7 +15,7 @@ const Footer = () => {
           <div className="flex-1">
             {/* آدرس و ساعت کاری */}
             <div className="text-right mb-8">
-              <p className="text-sm text-blue-200 leading-relaxed">
+              <p className="text-sm text-primary-foreground/70 leading-relaxed">
                 آدرس: خیابان دانشگاه، ساعت کاری: صبح
                 <br />
                 تا ۶ شب
@@ -32,13 +32,13 @@ const Footer = () => {
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <h4 className="text-white text-base font-medium">لینک‌های مهم</h4>
+                <h4 className="text-primary-foreground text-base font-medium">لینک‌های مهم</h4>
               </div>
-              <div className="space-y-2 text-sm text-blue-200">
-                <div className="hover:text-white transition-colors cursor-pointer">خانه</div>
-                <div className="hover:text-white transition-colors cursor-pointer">نقشه</div>
-                <div className="hover:text-white transition-colors cursor-pointer">جستجو</div>
-                <div className="hover:text-white transition-colors cursor-pointer">جزئیات شرکت</div>
+              <div className="space-y-2 text-sm text-primary-foreground/70">
+                <div className="hover:text-primary-foreground transition-colors cursor-pointer">خانه</div>
+                <div className="hover:text-primary-foreground transition-colors cursor-pointer">نقشه</div>
+                <div className="hover:text-primary-foreground transition-colors cursor-pointer">جستجو</div>
+                <div className="hover:text-primary-foreground transition-colors cursor-pointer">جزئیات شرکت</div>
               </div>
             </div>
 
@@ -52,9 +52,9 @@ const Footer = () => {
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <h4 className="text-white text-base font-medium">آدرس</h4>
+                <h4 className="text-primary-foreground text-base font-medium">آدرس</h4>
               </div>
-              <div className="text-sm text-blue-200 leading-relaxed">
+              <div className="text-sm text-primary-foreground/70 leading-relaxed">
                 <p>تهران، خیابان دانشگاه</p>
                 <p>پارک علم و فناوری تهران</p>
                 <p>کد پستی: ۱۴۱۷۹۳۳۵۳۳</p>
@@ -75,24 +75,24 @@ const Footer = () => {
               className="w-full h-full object-contain"
             />
           </div>
-          <h3 className="text-white text-lg font-medium">پارک علم و فناوری</h3>
+          <h3 className="text-primary-foreground text-lg font-medium">پارک علم و فناوری</h3>
         </div>
 
         {/* اطلاعات تماس */}
         <div className="flex items-center justify-center gap-8 text-center">
           {/* تلفن */}
           <div>
-            <div className="text-blue-200 text-sm mb-1">شماره تماس</div>
-            <div className="text-white text-base font-medium">+98 910 125 58</div>
+            <div className="text-primary-foreground/70 text-sm mb-1">شماره تماس</div>
+            <div className="text-primary-foreground text-base font-medium">+98 910 125 58</div>
           </div>
 
           {/* جداکننده */}
-          <div className="w-px h-8 bg-blue-700"></div>
+          <div className="w-px h-8 bg-primary-foreground/20"></div>
 
           {/* ایمیل */}
           <div>
-            <div className="text-blue-200 text-sm mb-1">ایمیل</div>
-            <div className="text-white text-base font-medium">info@gmail.com</div>
+            <div className="text-primary-foreground/70 text-sm mb-1">ایمیل</div>
+            <div className="text-primary-foreground text-base font-medium">info@gmail.com</div>
           </div>
         </div>
       </div>
