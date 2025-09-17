@@ -7,10 +7,12 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+
 const SearchPage = () => {
   const [selectedCompany, setSelectedCompany] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [activeFilter, setActiveFilter] = useState("all");
+
   const mockCompanies = [{
     id: 1,
     name: "هوش نگار",
@@ -27,6 +29,7 @@ const SearchPage = () => {
     field: "مدیر:سارا احمدی • حوزه:مشاوره",
     code: "پلاک:C_42"
   }];
+
   const filterOptions = [{
     id: "all",
     label: "همه"
@@ -43,63 +46,65 @@ const SearchPage = () => {
     id: "consulting",
     label: "مشاوره"
   }];
-  return <div className="min-h-screen bg-background">
+
+  return (
+    <div className="min-h-screen bg-background">
       <Header />
       
       <main className="pt-14">
         {/* Header Section */}
-        <div className="bg-primary px-4 py-4">
+        <div className="px-4 py-4">
           <div className="flex items-center justify-between">
-            <h1 className="text-xl font-bold text-primary-foreground"> جستجو</h1>
-            <Link to="/" className="flex items-center text-primary-foreground hover:text-accent">
+            <h1 className="text-xl font-bold text-primary">جستجو</h1>
+            <Link to="/" className="flex items-center text-primary hover:text-primary/80">
               <ArrowLeft className="h-5 w-5 ml-2" />
               <span className="text-base font-medium">بازگشت</span>
             </Link>
           </div>
         </div>
 
-        <div className="px-4 py-6 space-y-6">
+        <div className="px-4 py-6 space-y-4">
+          {/* Company Dropdown */}
+          <div className="max-w-md mx-auto">
+            <Select value={selectedCompany} onValueChange={setSelectedCompany}>
+              <SelectTrigger className="w-full h-12 text-base border-border rounded-xl bg-background px-4">
+                <SelectValue placeholder="نام شرکت" />
+              </SelectTrigger>
+              <SelectContent>
+                {mockCompanies.map(company => (
+                  <SelectItem key={company.id} value={company.id.toString()}>
+                    {company.name}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
           {/* Search Input */}
           <div className="max-w-md mx-auto">
-            <Input type="text" placeholder="جستجو بر اساس نام شرکت، مدیر یا حوزه فعالیت" value={searchTerm} onChange={e => setSearchTerm(e.target.value)} className="w-full h-12 text-base border-border rounded-xl bg-input px-4" />
-          </div>
-
-          {/* Filter Buttons */}
-          <div className="flex flex-wrap gap-2 max-w-lg mx-auto">
-            {/* همه button on the left */}
-            <div className="flex justify-start">
-              <Button variant={activeFilter === "all" ? "default" : "secondary"} size="sm" onClick={() => setActiveFilter("all")} className={`rounded-full px-4 py-2 text-sm font-medium ${activeFilter === "all" ? "bg-accent text-accent-foreground shadow-sm" : "bg-secondary text-secondary-foreground hover:bg-accent hover:text-accent-foreground"}`}>
-                همه
-              </Button>
-            </div>
-            {/* Other buttons centered */}
-            <div className="flex flex-wrap gap-2 justify-center flex-1">
-              {filterOptions.slice(1).map(filter => <Button key={filter.id} variant={activeFilter === filter.id ? "default" : "secondary"} size="sm" onClick={() => setActiveFilter(filter.id)} className={`rounded-full px-4 py-2 text-sm font-medium ${activeFilter === filter.id ? "bg-accent text-accent-foreground shadow-sm" : "bg-secondary text-secondary-foreground hover:bg-accent hover:text-accent-foreground"}`}>
-                  {filter.label}
-                </Button>)}
-            </div>
-          </div>
-
-          {/* Results Count */}
-          <div className="text-center">
-            <p className="text-sm text-muted-foreground">
-              {mockCompanies.length} شرکت یافت شد
-            </p>
+            <Input 
+              type="text" 
+              placeholder="نام شرکت، مدیر یا حوزه" 
+              value={searchTerm} 
+              onChange={e => setSearchTerm(e.target.value)} 
+              className="w-full h-12 text-base border-border rounded-xl bg-background px-4" 
+            />
           </div>
 
           {/* Search Results */}
           <div className="space-y-4 max-w-md mx-auto">
-            {mockCompanies.map(company => <Card key={company.id} className="bg-card border border-border rounded-xl shadow-sm overflow-hidden">
+            {mockCompanies.map(company => (
+              <Card key={company.id} className="bg-card border border-border rounded-xl shadow-sm overflow-hidden">
                 <CardContent className="p-4">
                   <div className="space-y-3">
                     <div>
-                      <h3 className="text-lg font-bold text-card-foreground">{company.name}</h3>
+                      <h3 className="text-lg font-bold text-primary">{company.name}</h3>
                       <p className="text-sm text-muted-foreground mt-1">{company.field}</p>
                       <p className="text-sm text-muted-foreground">{company.code}</p>
                     </div>
                     
                     <div className="flex gap-2 pt-2">
-                      <Button asChild size="sm" className="flex-1 text-sm py-2 rounded-lg bg-accent hover:bg-accent/90 text-accent-foreground">
+                      <Button asChild size="sm" className="flex-1 text-sm py-2 rounded-lg bg-primary hover:bg-primary/90 text-primary-foreground">
                         <Link to={`/company/${company.id}`}>
                           نمایش مسیر
                         </Link>
@@ -110,7 +115,8 @@ const SearchPage = () => {
                     </div>
                   </div>
                 </CardContent>
-              </Card>)}
+              </Card>
+            ))}
           </div>
 
           {/* Footer Note */}
@@ -121,6 +127,8 @@ const SearchPage = () => {
       </main>
 
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default SearchPage;
