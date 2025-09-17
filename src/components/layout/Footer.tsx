@@ -4,10 +4,9 @@ import mapIcon from "@/assets/map-icon.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 p-6" dir="rtl">
-      <div className="container mx-auto max-w-md">
-        <div className="bg-gradient-to-b from-blue-900 to-slate-900 rounded-3xl p-8 text-white">
-          <div className="flex gap-6">
+    <footer className="bg-gradient-to-b from-blue-900 to-slate-900 text-white" dir="rtl">
+      <div className="container mx-auto max-w-md p-8">
+        <div className="flex gap-6">
             {/* Left side - Main content */}
             <div className="flex-1">
               {/* Address and Working Hours */}
