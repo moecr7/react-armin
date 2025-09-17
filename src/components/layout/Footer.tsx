@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="grid grid-cols-1 gap-6">
             {/* آدرس و ساعات کاری */}
             <div>
-              <div className="flex items-start gap-2 justify-end text-right">
+              <div className="flex items-start gap-2">
                 <div className="w-5 h-5 mt-0.5 opacity-80 shrink-0">
                   <img src={mapIcon} alt="آدرس" className="w-full h-full object-contain" />
                 </div>
@@ -26,17 +26,17 @@ const Footer = () => {
 
             {/* لینک‌های مهم */}
             <div>
-              <div className="flex items-center gap-2 justify-end mb-2.5">
+              <div className="flex items-center gap-2 mb-2.5">
                 <div className="w-5 h-5 opacity-80 shrink-0">
                   <img src={repeateMusicIcon} alt="لینک‌های مهم" className="w-full h-full object-contain" />
                 </div>
                 <h4 className="text-[16px] font-medium">لینک های مهم</h4>
               </div>
-              <nav className="text-[16px] space-y-3 text-right">
-                <a className="block hover:text-white/90 transition-colors cursor-pointer">خانه</a>
-                <a className="block hover:underline underline-offset-8 cursor-pointer">نقشه</a>
-                <a className="block hover:text-white/90 transition-colors cursor-pointer">جستوجو</a>
-                <a className="block hover:underline underline-offset-8 cursor-pointer">جزعیات شرکت</a>
+              <nav className="text-[16px] space-y-3 text-right mr-7">
+                <a className="block story-link cursor-pointer">خانه</a>
+                <a className="block story-link cursor-pointer">نقشه</a>
+                <a className="block story-link cursor-pointer">جستوجو</a>
+                <a className="block story-link cursor-pointer">جزعیات شرکت</a>
               </nav>
             </div>
           </div>
