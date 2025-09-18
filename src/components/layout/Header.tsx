@@ -52,12 +52,13 @@ const AppHeader = () => {
                 onClick={() => setIsMenuOpen(true)}
                 aria-label="باز کردن منو"
                 className="
-                  h-[40px] w-[40px] rounded-[12px]
+                  h-[40px] w-[40px] rounded-[16px]
                   bg-[#3B6BFF] hover:bg-[#2F59E0]
                   grid place-items-center transition-colors
+                  shadow-sm
                 "
               >
-                <Menu className="w-[20px] h-[20px] text-white" />
+                <Menu className="w-[18px] h-[18px] text-white stroke-[2.5]" />
               </button>
             </div>
           </div>
