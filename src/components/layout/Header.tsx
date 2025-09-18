@@ -30,11 +30,10 @@ const AppHeader = () => {
     }
   }, [isMenuOpen]);
 
-  // بستن با ESC و فوکوس اولیه روی دکمه بستن
+  // بستن با ESC و فوکوس اولیه روی دکمه بستن + فوکوس‌تراپ ساده
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setIsMenuOpen(false);
-      // Focus trap ساده
       if (e.key === "Tab" && isMenuOpen && panelRef.current) {
         const focusables = panelRef.current.querySelectorAll<HTMLElement>(
           'a,button,[tabindex]:not([tabindex="-1"])'
@@ -54,10 +53,7 @@ const AppHeader = () => {
       }
     };
     document.addEventListener("keydown", onKey);
-    if (isMenuOpen) {
-      // تا رندر کامل
-      setTimeout(() => closeBtnRef.current?.focus(), 0);
-    }
+    if (isMenuOpen) setTimeout(() => closeBtnRef.current?.focus(), 0);
     return () => document.removeEventListener("keydown", onKey);
   }, [isMenuOpen]);
 
@@ -94,7 +90,7 @@ const AppHeader = () => {
                 </Link>
               </div>
 
-              {/* ستون 3 (سمت راست بصری): دکمه منو */}
+              {/* ستون ۳ (سمت راست بصری): دکمه منو با آیکن ۴ خطه دقیقاً مثل عکس */}
               <button
                 onClick={() => setIsMenuOpen(true)}
                 aria-label="باز کردن منو"
@@ -105,11 +101,28 @@ const AppHeader = () => {
                   shadow-sm
                 "
               >
-                {/* آیکن همبرگری سبک تصویری که فرستادی (سه خط) */}
-                <span className="relative block w-[18px] h-[14px]">
-                  <span className="absolute inset-x-0 top-0 h-[2px] bg-white rounded"></span>
-                  <span className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[2px] bg-white rounded"></span>
-                  <span className="absolute inset-x-0 bottom-0 h-[2px] bg-white rounded"></span>
+                {/* آیکن: دو خط کوتاه + دو خط بلند، وسط‌چین */}
+                <span className="relative inline-block" style={{ width: 20, height: 20 }}>
+                  {/* خط 1 - کوتاه */}
+                  <span
+                    className="absolute left-1/2 -translate-x-1/2 bg-white rounded"
+                    style={{ top: 2, width: 10, height: 2 }}
+                  />
+                  {/* خط 2 - بلند */}
+                  <span
+                    className="absolute left-1/2 -translate-x-1/2 bg-white rounded"
+                    style={{ top: 8, width: 16, height: 2 }}
+                  />
+                  {/* خط 3 - کوتاه */}
+                  <span
+                    className="absolute left-1/2 -translate-x-1/2 bg-white rounded"
+                    style={{ top: 14, width: 10, height: 2 }}
+                  />
+                  {/* خط 4 - بلند */}
+                  <span
+                    className="absolute left-1/2 -translate-x-1/2 bg-white rounded"
+                    style={{ top: 20, width: 16, height: 2, transform: "translateX(-50%)" }}
+                  />
                 </span>
               </button>
             </div>
