@@ -105,26 +105,26 @@ const AppHeader = () => {
                   shadow-sm
                 "
               >
-                {/* آیکن: دو خط نصفه + دو خط کامل */}
-                <span className="relative inline-block" style={{ width: 20, height: 24 }}>
+                {/* آیکن: دو خط کوتاه (بالا)، دو خط بلند (پایین)، همه یک ضخامت */}
+                <span className="relative block w-[20px] h-[24px]">
                   {/* خط 1 - کوتاه */}
                   <span
-                    className="absolute left-1/2 -translate-x-1/2 bg-white rounded"
+                    className="absolute left-0 bg-white rounded"
                     style={{ top: 2, width: 10, height: 2 }}
                   />
                   {/* خط 2 - کوتاه */}
                   <span
-                    className="absolute left-1/2 -translate-x-1/2 bg-white rounded"
+                    className="absolute left-0 bg-white rounded"
                     style={{ top: 8, width: 10, height: 2 }}
                   />
                   {/* خط 3 - بلند */}
                   <span
-                    className="absolute left-1/2 -translate-x-1/2 bg-white rounded"
+                    className="absolute left-0 bg-white rounded"
                     style={{ top: 14, width: 16, height: 2 }}
                   />
                   {/* خط 4 - بلند */}
                   <span
-                    className="absolute left-1/2 -translate-x-1/2 bg-white rounded"
+                    className="absolute left-0 bg-white rounded"
                     style={{ top: 20, width: 16, height: 2 }}
                   />
                 </span>
