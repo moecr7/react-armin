@@ -7,7 +7,7 @@ import { ArrowLeft, Plus, Minus } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import parkMapImage from "@/assets/park-map.jpg";
+import parkMapImage from "@/assets/new-map.png";
 
 const MapPage = () => {
   const [selectedCompany, setSelectedCompany] = useState("");
