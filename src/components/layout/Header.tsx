@@ -73,7 +73,11 @@ const AppHeader = () => {
             {/* گرید 3ستونه: [40px | 1fr | 40px] برای مرکز دقیق عنوان */}
             <div className="grid grid-cols-[40px_1fr_40px] items-center h-full px-3">
               {/* ستون 1 (سمت چپ بصری): لوگو */}
-              <Link to="/" className="h-[40px] w-[40px] grid place-items-center" aria-label="صفحه اصلی">
+              <Link
+                to="/"
+                className="h-[40px] w-[40px] grid place-items-center"
+                aria-label="صفحه اصلی"
+              >
                 <img
                   src={logo}
                   alt="پارک علم و فناوری"
@@ -90,7 +94,7 @@ const AppHeader = () => {
                 </Link>
               </div>
 
-              {/* ستون ۳ (سمت راست بصری): دکمه منو با آیکن ۴ خطه دقیقاً مثل عکس */}
+              {/* ستون ۳ (سمت راست بصری): دکمه منو */}
               <button
                 onClick={() => setIsMenuOpen(true)}
                 aria-label="باز کردن منو"
@@ -101,27 +105,27 @@ const AppHeader = () => {
                   shadow-sm
                 "
               >
-                {/* آیکن: دو خط کوتاه + دو خط بلند، وسط‌چین */}
-                <span className="relative inline-block" style={{ width: 20, height: 20 }}>
+                {/* آیکن: دو خط نصفه + دو خط کامل */}
+                <span className="relative inline-block" style={{ width: 20, height: 24 }}>
                   {/* خط 1 - کوتاه */}
                   <span
                     className="absolute left-1/2 -translate-x-1/2 bg-white rounded"
                     style={{ top: 2, width: 10, height: 2 }}
                   />
-                  {/* خط 2 - بلند */}
+                  {/* خط 2 - کوتاه */}
                   <span
                     className="absolute left-1/2 -translate-x-1/2 bg-white rounded"
-                    style={{ top: 8, width: 16, height: 2 }}
+                    style={{ top: 8, width: 10, height: 2 }}
                   />
-                  {/* خط 3 - کوتاه */}
+                  {/* خط 3 - بلند */}
                   <span
                     className="absolute left-1/2 -translate-x-1/2 bg-white rounded"
-                    style={{ top: 14, width: 10, height: 2 }}
+                    style={{ top: 14, width: 16, height: 2 }}
                   />
                   {/* خط 4 - بلند */}
                   <span
                     className="absolute left-1/2 -translate-x-1/2 bg-white rounded"
-                    style={{ top: 20, width: 16, height: 2, transform: "translateX(-50%)" }}
+                    style={{ top: 20, width: 16, height: 2 }}
                   />
                 </span>
               </button>
@@ -182,7 +186,9 @@ const AppHeader = () => {
                 `}
                 style={{
                   animationDelay: `${i * 80}ms`,
-                  animation: isMenuOpen ? "slide-in-right 0.5s ease-out forwards" : "none",
+                  animation: isMenuOpen
+                    ? "slide-in-right 0.5s ease-out forwards"
+                    : "none",
                 }}
                 onClick={() => setIsMenuOpen(false)}
               >
